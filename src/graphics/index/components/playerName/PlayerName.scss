@@ -1,0 +1,27 @@
+.player-info-container {
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 5% 5% 65%;
+    grid-template-rows: 1;
+
+    .player-name {
+        grid-row: 1;
+        color: #C29234;
+        font-size: 3.5vw;
+        padding-left: 50px;
+    }
+    .region-1, .region-2 {
+        width: 80%;
+        grid-row: 1;
+        background-color: #1A3771;
+        border: 2px solid #81848C;
+        border-radius: 50%;
+    }
+    .region-1 {
+        grid-column: 2;
+    }
+    .region-2 {
+        grid-column: 3;
+    }
+}

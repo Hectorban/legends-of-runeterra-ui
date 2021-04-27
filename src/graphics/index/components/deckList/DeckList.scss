@@ -1,0 +1,10 @@
+.deck-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(15, 5.5%);
+    grid-auto-flow: column;
+    overflow: hidden;
+    padding: 25px;
+    row-gap: 7px;
+    column-gap: 25px;
+}
