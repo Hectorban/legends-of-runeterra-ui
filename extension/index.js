@@ -8,5 +8,4 @@ module.exports = nodecg => {
 
 	//Modules
 	require("./ddragonfetch")
-	require("./svgtext")
 }

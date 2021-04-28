@@ -1,16 +1,8 @@
 .key-cards-container {
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
-    overflow: hidden;
-    .key-card {
-        width: 80%;
-        animation: key-card-mover 6s ease;
-    }
-}
-@keyframes key-card-mover {
-    0% { transform: translateY(200%); }
-    100% { transform: translateY(0%); }
 }

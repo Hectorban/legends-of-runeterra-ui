@@ -3,13 +3,13 @@ import QRCode from 'qrcode.react'
 
 import "./DeckCode.scss"
 
-const DeckCode = () => {
+const DeckCode = ({deckCode}) => {
     return (
         <div className="code-container">
             <QRCode
-            className="QrCode"
-            value={"CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA"}
-            size={130}
+            className="qr-code"
+            value={deckCode}
+            size={160}
             bgColor={"#ffffff"}
             fgColor={"#000000"}
             level={"L"}

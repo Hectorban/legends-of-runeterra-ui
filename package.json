@@ -30,23 +30,26 @@
       {
         "name": "panel1",
         "title": "Panel1",
-        "width": 2,
+        "width": 3,
         "file": "panel.html",
-        "headerColor": "#525F78"
+        "headerColor": "#525F78",
+        "workspace": "Legends of Runeterra"
       },
       {
         "name": "panel2",
         "title": "Panel2",
         "width": 2,
         "file": "panel2.html",
-        "headerColor": "#525F78"
+        "headerColor": "#525F78",
+        "workspace": "Legends of Runeterra"
       },
       {
         "name": "panel3",
         "title": "Panel3",
         "width": 2,
         "file": "panel3.html",
-        "headerColor": "#525F78"
+        "headerColor": "#525F78",
+        "workspace": "Legends of Runeterra"
       }
     ],
     "graphics": [

@@ -1,18 +1,22 @@
 import React from 'react';
 
 import './KeyCards.scss'
+import KeyCard from '../keyCard'
 
 const KeyCards = ({deck}) => {
-    console.log(deck)
-    const keyCard1 = `https://dd.b.pvp.net/latest/set${deck[0].set}/es_mx/img/cards/${deck[0].code}.png`
-    const keyCard2 = `https://dd.b.pvp.net/latest/set${deck[1].set}/es_mx/img/cards/${deck[1].code}.png`
-    const keyCard3 = `https://dd.b.pvp.net/latest/set${deck[2].set}/es_mx/img/cards/${deck[2].code}.png`
+    const keyCardArray = deck.slice(0,3)
 
     return (
         <div className="key-cards-container">
-            <img className="key-card" src={keyCard1}/>
-            <img className="key-card" src={keyCard2}/>
-            <img className="key-card" src={keyCard3}/>
+            {keyCardArray.map((card, i) => {
+                return (
+                <KeyCard 
+                order = {i}
+                key = {i}
+                card = {card}
+                />
+                )
+            })}
         </div>
     );
 };

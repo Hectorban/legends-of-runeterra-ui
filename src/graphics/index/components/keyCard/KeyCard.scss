@@ -1,0 +1,22 @@
+.key-card-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .key-card {
+        width: 85%;
+        animation: keycardmover 5s;
+        animation-fill-mode: both;
+        animation-delay: calc(var(--order) * 500ms);
+    }
+}
+
+@keyframes keycardmover {
+    0% { 
+        transform: translateY(200%); 
+    }
+    100% { 
+        transform: translateY(0%); 
+    }
+}

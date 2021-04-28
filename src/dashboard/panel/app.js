@@ -1,33 +1,18 @@
 import React, { useState, useEffect } from "react";
 import NCGStore, { replicate } from "../../stores/NodecgStore";
 
-
+const deckCodeReplicant = nodecg.Replicant("Player1DeckCode")
 function App() {
-  const [state, setState] = useState({
-    replicants: NCGStore.getReplicants(),
-  });
+  let deckCodeString = React.createRef() 
 
-  useEffect(() => {
-    replicate("champSelectUpdate");
-    replicate("champInfo");
-    replicate("summInfo");
-  }, []);
-
-  useEffect(() => {
-    NCGStore.on("change", () => {
-      setState({
-        replicants: NCGStore.getReplicants(),
-      });
-    });
-  }, []);
-
-  const {
-    replicants: { champSelectUpdate, champInfo, summInfo },
-  } = state || {};
+  const deckUpdate = () =>{
+    deckCodeReplicant.value = deckCodeString.current.value
+  }
 
   return (
     <div id="app">
-        <p>Holaaaa</p>
+        <input placeholder="Codigo de deck de el jugador" ref={deckCodeString} className="deck-code" type="text"/>
+        <button onClick={deckUpdate} className="set-deck-code">Set deck code</button>
     </div>
   );
 }

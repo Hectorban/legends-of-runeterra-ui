@@ -33995,13 +33995,14 @@ require("./DeckCode.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var DeckCode = function DeckCode() {
+var DeckCode = function DeckCode(_ref) {
+  var deckCode = _ref.deckCode;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "code-container"
   }, /*#__PURE__*/_react.default.createElement(_qrcode.default, {
-    className: "QrCode",
-    value: "CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA",
-    size: 130,
+    className: "qr-code",
+    value: deckCode,
+    size: 160,
     bgColor: "#ffffff",
     fgColor: "#000000",
     level: "L",
@@ -34086,7 +34087,60 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index/components/keyCards/KeyCards.js":[function(require,module,exports) {
+},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index/components/keyCard/KeyCard.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index/components/keyCard/KeyCard.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./KeyCard.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var KeyCard = function KeyCard(_ref) {
+  var card = _ref.card,
+      order = _ref.order;
+  var keyCardImage = "https://dd.b.pvp.net/latest/set".concat(card.set, "/es_mx/img/cards/").concat(card.code, ".png");
+  var animationOrder = {
+    "--order": order + 1
+  };
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "key-card-container",
+    style: animationOrder
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "key-card",
+    src: keyCardImage
+  }));
+};
+
+var _default = KeyCard;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js","./KeyCard.scss":"index/components/keyCard/KeyCard.scss"}],"index/components/keyCard/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _KeyCard.default;
+  }
+});
+
+var _KeyCard = _interopRequireDefault(require("./KeyCard"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./KeyCard":"index/components/keyCard/KeyCard.js"}],"index/components/keyCards/KeyCards.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34098,31 +34152,27 @@ var _react = _interopRequireDefault(require("react"));
 
 require("./KeyCards.scss");
 
+var _keyCard = _interopRequireDefault(require("../keyCard"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var KeyCards = function KeyCards(_ref) {
   var deck = _ref.deck;
-  console.log(deck);
-  var keyCard1 = "https://dd.b.pvp.net/latest/set".concat(deck[0].set, "/es_mx/img/cards/").concat(deck[0].code, ".png");
-  var keyCard2 = "https://dd.b.pvp.net/latest/set".concat(deck[1].set, "/es_mx/img/cards/").concat(deck[1].code, ".png");
-  var keyCard3 = "https://dd.b.pvp.net/latest/set".concat(deck[2].set, "/es_mx/img/cards/").concat(deck[2].code, ".png");
+  var keyCardArray = deck.slice(0, 3);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "key-cards-container"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    className: "key-card",
-    src: keyCard1
-  }), /*#__PURE__*/_react.default.createElement("img", {
-    className: "key-card",
-    src: keyCard2
-  }), /*#__PURE__*/_react.default.createElement("img", {
-    className: "key-card",
-    src: keyCard3
+  }, keyCardArray.map(function (card, i) {
+    return /*#__PURE__*/_react.default.createElement(_keyCard.default, {
+      order: i,
+      key: i,
+      card: card
+    });
   }));
 };
 
 var _default = KeyCards;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","./KeyCards.scss":"index/components/keyCards/KeyCards.scss"}],"index/components/keyCards/index.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","./KeyCards.scss":"index/components/keyCards/KeyCards.scss","../keyCard":"index/components/keyCard/index.js"}],"index/components/keyCards/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34194,7 +34244,7 @@ function App() {
       setState = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    (0, _NodecgStore.replicate)("champSelectUpdate");
+    (0, _NodecgStore.replicate)("Player1DeckCode");
   }, []);
   (0, _react.useEffect)(function () {
     _NodecgStore.default.on("change", function () {
@@ -34205,29 +34255,36 @@ function App() {
   }, []);
 
   var _ref = state || {},
-      champSelectUpdate = _ref.replicants.champSelectUpdate;
+      Player1DeckCode = _ref.replicants.Player1DeckCode;
 
-  var deck = _runeterra.DeckEncoder.decode("CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA");
+  console.log(Player1DeckCode);
+  var deck = Player1DeckCode ? _runeterra.DeckEncoder.decode(Player1DeckCode) : undefined;
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    id: "app"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "app-container"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "player-name"
-  }, /*#__PURE__*/_react.default.createElement(_playerName.default, null)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "deck-list"
-  }, /*#__PURE__*/_react.default.createElement(_deckList.default, {
-    deck: deck
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "key-cards"
-  }, /*#__PURE__*/_react.default.createElement(_keyCards.default, {
-    deck: deck
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "mana-curve"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "deck-code"
-  }, /*#__PURE__*/_react.default.createElement(_deckCode.default, null))));
+  if (Player1DeckCode) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      id: "app"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "app-container"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "player-name"
+    }, /*#__PURE__*/_react.default.createElement(_playerName.default, null)), /*#__PURE__*/_react.default.createElement("div", {
+      className: "deck-list"
+    }, /*#__PURE__*/_react.default.createElement(_deckList.default, {
+      deck: deck
+    })), /*#__PURE__*/_react.default.createElement("div", {
+      className: "key-cards"
+    }, /*#__PURE__*/_react.default.createElement(_keyCards.default, {
+      deck: deck
+    })), /*#__PURE__*/_react.default.createElement("div", {
+      className: "mana-curve"
+    }), /*#__PURE__*/_react.default.createElement("div", {
+      className: "deck-code"
+    }, /*#__PURE__*/_react.default.createElement(_deckCode.default, {
+      deckCode: Player1DeckCode
+    }))));
+  } else {
+    return /*#__PURE__*/_react.default.createElement("h1", null, "Loading...");
+  }
 }
 
 var _default = App;
@@ -39302,7 +39359,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55028" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53564" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

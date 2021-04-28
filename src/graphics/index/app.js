@@ -15,23 +15,24 @@ function App() {
   });
 
   useEffect(() => {
-    replicate("champSelectUpdate");
+    replicate("Player1DeckCode");
   }, []);
 
   useEffect(() => {
     NCGStore.on("change", () => {
       setState({
         replicants: NCGStore.getReplicants(),
-      });
+      }); 
     });
   }, []);
 
   const {
-    replicants: { champSelectUpdate },
+    replicants: { Player1DeckCode },
   } = state || {};
   
-  const deck = DeckEncoder.decode("CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA")
-
+  console.log(Player1DeckCode)
+  const deck = Player1DeckCode ? DeckEncoder.decode(Player1DeckCode) : undefined
+  if(Player1DeckCode){
   return (
     <div id="app">
       <div className="app-container">
@@ -55,12 +56,15 @@ function App() {
         </div>
         <div className="deck-code">
         <DeckCode
-        
+        deckCode = {Player1DeckCode}
         />
         </div>
       </div> 
     </div>
-  );
+  );}
+  else {return(
+    <h1>Loading...</h1>
+  )}
 }
 
 export default App;
