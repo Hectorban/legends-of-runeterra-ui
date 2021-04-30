@@ -15,7 +15,7 @@ fetch("https://dd.b.pvp.net/latest/core/es_mx/data/globals-es_mx.json")
             .then(res => res.json())
             .then((response) =>{
                 response.map((card) => {
-                cardData[card.cardCode] = {"name": card.name, "cost": card.cost}
+                cardData[card.cardCode] = {"name": card.name, "cost": card.cost, "type": card.type, "supertype": card.supertype}
                 })
             })
         })

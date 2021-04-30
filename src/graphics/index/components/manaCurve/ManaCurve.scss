@@ -1,0 +1,14 @@
+.mana-curve-container {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .mana-curve, .container {
+        grid-row: 1;
+    }
+    .mana-curve {
+        z-index: 2;
+    }
+    .container {
+        z-index: 1;
+    }
+}

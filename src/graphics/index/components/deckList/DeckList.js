@@ -6,9 +6,8 @@ import "./DeckList.scss"
 const DeckList = ({deck}) => {
     return (
         <div className="deck-container">
-        {deck.map((card, i) =>{
+        {deck.map((card, i) =>{i
             const { code, count, set, id, faction } = card
-            const cardColumn = i < 15 ? 1 : 2
             return (
                 <Card
                 key={i}
@@ -18,7 +17,6 @@ const DeckList = ({deck}) => {
                 set = {set}
                 id = {id}
                 faction = {faction}
-                cardColumn = {cardColumn}
                 />
             )
         })}

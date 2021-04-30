@@ -3,9 +3,28 @@ import React from 'react';
 import './KeyCards.scss'
 import KeyCard from '../keyCard'
 
-const KeyCards = ({deck}) => {
-    const keyCardArray = deck.slice(0,3)
+const cardInfoRep = nodecg.Replicant("allCardData")
 
+const KeyCards = ({deck}) => {
+
+    const [cardInfo, setCardInfo] = React.useState("");
+ 
+    React.useEffect(() =>{
+    const fetchcardInfo = async ()=>{
+      await NodeCG.waitForReplicants(cardInfoRep).then(async () => {
+        await setCardInfo(cardInfoRep.value)
+      });
+    };
+    fetchcardInfo();
+    }, []);
+
+    const keyCardArray = new Array
+    deck.map((card) =>{
+        const cardSupertype = cardInfo[card.code] ? cardInfo[card.code].supertype : undefined
+        if(cardSupertype == 'Campeón') {
+            keyCardArray.push(card)
+        }
+    })
     return (
         <div className="key-cards-container">
             {keyCardArray.map((card, i) => {

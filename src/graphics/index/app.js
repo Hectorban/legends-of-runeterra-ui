@@ -6,6 +6,7 @@ import DeckList from "./components/deckList"
 import DeckCode from "./components/deckCode"
 import PlayerName from "./components/playerName"
 import KeyCards from "./components/keyCards"
+import ManaCurve from './components/manaCurve'
 
 import "./app.scss"
 
@@ -52,12 +53,14 @@ function App() {
           />
         </div>
         <div className="mana-curve">
-
+          <ManaCurve 
+          
+          />
         </div>
         <div className="deck-code">
-        <DeckCode
-        deckCode = {Player1DeckCode}
-        />
+          <DeckCode
+          deckCode = {Player1DeckCode}
+          />
         </div>
       </div> 
     </div>
