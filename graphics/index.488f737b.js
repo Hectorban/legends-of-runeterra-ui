@@ -34314,7 +34314,41 @@ Object.defineProperty(exports, "default", {
 var _KeyCards = _interopRequireDefault(require("./KeyCards"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./KeyCards":"index/components/keyCards/KeyCards.js"}],"index/components/manaCurve/ManaCurve.scss":[function(require,module,exports) {
+},{"./KeyCards":"index/components/keyCards/KeyCards.js"}],"index/components/manaPylon/ManaPylon.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ManaPylons = function ManaPylons() {
+  return /*#__PURE__*/_react.default.createElement("div", null);
+};
+
+var _default = ManaPylons;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js"}],"index/components/manaPylon/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function () {
+    return _ManaPylon.default;
+  }
+});
+
+var _ManaPylon = _interopRequireDefault(require("./ManaPylon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./ManaPylon":"index/components/manaPylon/ManaPylon.js"}],"index/components/manaCurve/ManaCurve.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -34329,19 +34363,112 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _manaPylon = _interopRequireDefault(require("../manaPylon"));
+
 require("./ManaCurve.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ManaCurve = function ManaCurve() {
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var cardInfoRep = nodecg.Replicant("allCardData");
+
+var ManaCurve = function ManaCurve(_ref) {
+  var deck = _ref.deck;
+
+  var _React$useState = _react.default.useState(""),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      cardInfo = _React$useState2[0],
+      setCardInfo = _React$useState2[1];
+
+  _react.default.useEffect(function () {
+    var fetchcardInfo = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return NodeCG.waitForReplicants(cardInfoRep).then( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                  return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                      switch (_context.prev = _context.next) {
+                        case 0:
+                          _context.next = 2;
+                          return setCardInfo(cardInfoRep.value);
+
+                        case 2:
+                        case "end":
+                          return _context.stop();
+                      }
+                    }
+                  }, _callee);
+                })));
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function fetchcardInfo() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+
+    fetchcardInfo();
+  }, []);
+
+  var costObj = {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0
+  };
+  deck.map(function (card) {
+    var cardCost = cardInfo[card.code] ? cardInfo[card.code].cost : undefined;
+    costObj[cardCost] += card.count;
+  });
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "mana-curve-container"
-  });
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    className: "background",
+    src: "https://i.imgur.com/CBIJyse.png"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "curve-container"
+  }, Object.keys(costObj).map(function (cost, i) {
+    return /*#__PURE__*/_react.default.createElement(_manaPylon.default, {
+      key: i
+    });
+  })));
 };
 
 var _default = ManaCurve;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","./ManaCurve.scss":"index/components/manaCurve/ManaCurve.scss"}],"index/components/manaCurve/index.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","../manaPylon":"index/components/manaPylon/index.js","./ManaCurve.scss":"index/components/manaCurve/ManaCurve.scss"}],"index/components/manaCurve/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34447,7 +34574,9 @@ function App() {
       deck: deck
     })), /*#__PURE__*/_react.default.createElement("div", {
       className: "mana-curve"
-    }, /*#__PURE__*/_react.default.createElement(_manaCurve.default, null)), /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement(_manaCurve.default, {
+      deck: deck
+    })), /*#__PURE__*/_react.default.createElement("div", {
       className: "deck-code"
     }, /*#__PURE__*/_react.default.createElement(_deckCode.default, {
       deckCode: Player1DeckCode
@@ -39529,7 +39658,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55969" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59116" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

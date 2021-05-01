@@ -43,17 +43,17 @@ function App() {
         </div>
         <div className="deck-list">
           <DeckList
-          deck = {deck}
+            deck = {deck}
           />
         </div>
         <div className="key-cards">
           <KeyCards 
-          deck = {deck}
+            deck = {deck}
           />
         </div>
         <div className="mana-curve">
           <ManaCurve 
-          
+            deck={deck} 
           />
         </div>
         <div className="deck-code">
