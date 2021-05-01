@@ -21,7 +21,7 @@ const Card = ({ cardNumber, code, count, set, id, faction}) => {
     const cardType = cardInfo[code] ? cardInfo[code].type : undefined;
     const cardColumn = cardType == 'Unidad' ? 1 : cardType == 'Hechizo' ? 2 : 3
 
-    const animationOrder = {"--order": cardNumber}
+    const animationOrder = {"--order": cardNumber-1}
     const cardColumnOrder = {"--column": cardColumn}
     
     return (

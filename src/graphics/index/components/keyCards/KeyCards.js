@@ -10,10 +10,13 @@ const KeyCards = ({deck}) => {
     const [cardInfo, setCardInfo] = React.useState("");
  
     React.useEffect(() =>{
-    const fetchcardInfo = async ()=>{
-      await NodeCG.waitForReplicants(cardInfoRep).then(async () => {
-        await setCardInfo(cardInfoRep.value)
-      });
+        const fetchcardInfo = async ()=>{
+          await NodeCG.waitForReplicants(cardInfoRep).then(async () => {
+            await setCardInfo(cardInfoRep.value)
+          });
+        const timerfunct = setTimeout(() => {
+            setTimer(true)
+        }, 6000);
     };
     fetchcardInfo();
     }, []);
@@ -38,6 +41,5 @@ const KeyCards = ({deck}) => {
             })}
         </div>
     );
-};
-
+}
 export default KeyCards;

@@ -133,25 +133,59 @@
   justify-items: center;
 }
 .key-card-container {
-  display: flex;
+  display: grid;
   width: 100%;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  transform-style: preserve-3d;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
 }
-.key-card-container .key-card {
-  width: 85%;
-  animation: keycardmover 5s;
-  animation-fill-mode: both;
-  animation-delay: calc(var(--order) * 500ms);
+.key-card-container .face {
+  width: 90%;
+  grid-row: 1;
+  grid-column: 1;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: 2s ease-in-out;
+  transform: perspective(500px) rotateY(0deg);
+}
+.key-card-container .face.front {
+  animation: keycardmoverfront 2s;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 2000ms);
+  transform: perspective(500px) rotateY(180deg);
+}
+.key-card-container .face.front .key-card {
+  width: 100%;
+}
+.key-card-container .face.back {
+  animation: keycardmoverback 2s;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 2000ms);
+}
+.key-card-container .face.back .card-back {
+  width: 100%;
 }
 
-@keyframes keycardmover {
-  0% {
-    transform: translateY(200%);
+.card-placeholder-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-placeholder-container .card-placeholder {
+  width: 90%;
+}
+
+@keyframes keycardmoverback {
+  to {
+    transform: perspective(500px) rotateY(180deg);
   }
-  100% {
-    transform: translateY(0%);
+}
+@keyframes keycardmoverfront {
+  to {
+    transform: perspective(500px) rotateY(360deg);
   }
 }
 .mana-curve-container {

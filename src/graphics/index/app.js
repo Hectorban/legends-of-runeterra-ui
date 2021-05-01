@@ -31,7 +31,6 @@ function App() {
     replicants: { Player1DeckCode },
   } = state || {};
   
-  console.log(Player1DeckCode)
   const deck = Player1DeckCode ? DeckEncoder.decode(Player1DeckCode) : undefined
   if(Player1DeckCode){
   return (
