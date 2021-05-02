@@ -12,7 +12,6 @@ const KeyCard = ({card, order}) => {
             setTimer(true)
         }, 5500);
     }, []);
-    console.log(timer)
     if(timer) {
     return (
         <div className="key-card-container" style={animationOrder}>

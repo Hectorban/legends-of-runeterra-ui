@@ -27,8 +27,11 @@ const ManaCurve = ({deck}) => {
             <img className='background' src='https://i.imgur.com/CBIJyse.png'/>
             <div className='curve-container'>
                 {Object.keys(costObj).map((cost, i) =>{
+                    const costValue = costObj[cost]
                     return (
                         <ManaPylon 
+                        costValue = {costValue}
+                        costKey = {cost}
                         key = {i}
                         />
                     )
