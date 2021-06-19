@@ -16,6 +16,6 @@ const init = async () => {
 	const nodecg = nodecgApiContext.get()
 	nodecg.log.info("Initializing backend...")
 
-	// Modules
+	// Modules 
 	require('./ddragonfetch')
 }

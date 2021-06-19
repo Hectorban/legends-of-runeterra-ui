@@ -1,5 +1,8 @@
-import React, {FC, useEffect, useState} from 'react';
-import NCGStore, { replicate } from "../../stores/NodecgStore";
+import React, {FC, useEffect, useState} from 'react'
+import { DeckEncoder } from 'runeterra'
+import NCGStore, { replicate } from "../../stores/NodecgStore"
+
+import './app.scss'
 
 const app:FC = () => {
   const [state, setState] = useState({
