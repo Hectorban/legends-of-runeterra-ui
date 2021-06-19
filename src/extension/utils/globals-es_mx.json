@@ -1,0 +1,550 @@
+{
+  "vocabTerms": [
+    {
+      "description": "Al invocarla, esta carta obtiene su bonificación de alianza si la carta de arriba de tu mazo coincide con su región.",
+      "name": "Alianza",
+      "nameRef": "Allegiance"
+    },
+    {
+      "description": "Elige la siguiente Arma Lunar para Aphelios.",
+      "name": "Fase",
+      "nameRef": "Phase"
+    },
+    {
+      "description": "Esta unidad crea un fragmento de espada aleatorio necesario para restaurar la espada. Cuando hayas lanzado los 3, crea la Espada del Exilio.",
+      "name": "Reforjar",
+      "nameRef": "Reforge"
+    },
+    {
+      "description": "Roba 1 de cada aliado Ascendido de inmediato. Durante el resto de la partida, tus Ascendidos de nivel 2 serán de nivel 3.",
+      "name": "Restaurar el Disco Solar",
+      "nameRef": "SunDiscRestore"
+    },
+    {
+      "description": "Atacar con una unidad de apoyo mejorará la unidad a su derecha.",
+      "name": "Apoyo",
+      "nameRef": "Support"
+    },
+    {
+      "description": "La unidad con el poder más alto. Los empates se resuelven con la vida más alta y luego con el costo más alto.",
+      "name": "Más fuerte",
+      "nameRef": "Strongest"
+    },
+    {
+      "description": "Aniquila X número de cartas que no sean campeones del fondo de tu mazo.",
+      "name": "Desechar",
+      "nameRef": "Toss"
+    },
+    {
+      "description": "Inicia un ataque gratis con ese número de Cuchillas invocadas.",
+      "name": "Danza de Cuchillas",
+      "nameRef": "BladeDance"
+    },
+    {
+      "description": "Estarás contemplando una carta si la tienes en juego o en tu mano.",
+      "name": "Contemplar",
+      "nameRef": "Behold"
+    },
+    {
+      "description": "Este efecto se obtiene al terminar la ronda.",
+      "name": "Fin de la ronda",
+      "nameRef": "RoundEnd"
+    },
+    {
+      "description": "Obtén este efecto cuando esta unidad ataque.",
+      "name": "Atacar",
+      "nameRef": "Attack"
+    },
+    {
+      "description": "Una unidad obtiene una mejora cuando su poder o vida aumentan u obtiene una nueva palabra clave.",
+      "name": "Mejorada",
+      "nameRef": "Buffed"
+    },
+    {
+      "description": "Este efecto se obtiene cuando una unidad trata de infligir daño usando su poder, ya sea al final de la batalla o mediante hechizos. Las unidades con 0 de poder no pueden golpear.",
+      "name": "Golpear",
+      "nameRef": "Strike"
+    },
+    {
+      "description": "Surte efecto cuando una unidad golpea el nexo enemigo.",
+      "name": "Golpe al Nexo",
+      "nameRef": "NexusStrike"
+    },
+    {
+      "description": "Se activa si los aliados han infligido 5+ de daño al menos 4 veces en esta partida.",
+      "name": "Reputación",
+      "nameRef": "Reputation"
+    },
+    {
+      "description": "Este efecto se obtiene al iniciar la ronda.",
+      "name": "Inicio de la ronda",
+      "nameRef": "RoundStart"
+    },
+    {
+      "description": "Este efecto se obtiene al sacar la unidad de tu mano.",
+      "name": "Jugar",
+      "nameRef": "Play"
+    },
+    {
+      "description": "En juego, en tu mano, en tu mazo; cartas descartadas e incluso creadas o invocadas después.",
+      "name": "En todas partes",
+      "nameRef": "Everywhere"
+    },
+    {
+      "description": "Un Hito con Cuenta regresiva reduce su conteo en dicha cantidad de veces.",
+      "name": "Avanzar",
+      "nameRef": "Advance"
+    },
+    {
+      "description": "Inicio de la ronda: Tengo Cuenta regresiva 1. Al llegar a 0, me destruyo y activo el efecto de Cuenta regresiva.",
+      "name": "Cuenta regresiva",
+      "nameRef": "Buried"
+    },
+    {
+      "description": "Si no la tienes, obtén la ficha de ataque; puedes atacar en esta ronda.",
+      "name": "Preparar",
+      "nameRef": "Rally"
+    },
+    {
+      "description": "Cuando mates a una unidad mediante daño, efecto letal o la ataques con un aliado. Recuerda que no cuenta morir por tu propia mano (como al usar Endeble).",
+      "name": "Matar",
+      "nameRef": "Slay"
+    },
+    {
+      "description": "Elimina todas las palabras clave, habilidades y efectos activos. No afecta el daño ni el subtipo.",
+      "name": "Silenciar",
+      "nameRef": "Silence"
+    },
+    {
+      "description": "Una carta activa su habilidad de Pillaje si se juega después de que hayas infligido daño al nexo enemigo en esta ronda.",
+      "name": "Pillaje",
+      "nameRef": "Plunder"
+    },
+    {
+      "description": "Elige una carta de entre 3 en tu mazo. Revuelvo el mazo y coloco esa carta en la parte superior.",
+      "name": "Predecir",
+      "nameRef": "Predict"
+    }
+  ],
+  "keywords": [
+    {
+      "description": "Inflige al nexo enemigo más daño del que mataría a los objetivos.",
+      "name": "Arrollar",
+      "nameRef": "SpellOverwhelm"
+    },
+    {
+      "description": "Los hechizos de Ráfaga se resuelven al instante. El enemigo no puede actuar antes de que finalicen.",
+      "name": "Ráfaga",
+      "nameRef": "Burst"
+    },
+    {
+      "description": "Inicio de la ronda: Tengo Cuenta regresiva 1. Al llegar a 0, me destruyo y activo el efecto de Cuenta regresiva.",
+      "name": "Cuenta regresiva",
+      "nameRef": "Countdown"
+    },
+    {
+      "description": "Este efecto se obtiene al sacar la unidad de tu mano.",
+      "name": "Jugar",
+      "nameRef": "PlaySkillMark"
+    },
+    {
+      "description": "Los Hitos ocupan un lugar en el tablero. No pueden atacar, bloquear, ni recibir daño.",
+      "name": "Hito",
+      "nameRef": "LandmarkVisualOnly"
+    },
+    {
+      "description": "Elimina una carta capturada y la devuelve cuando la unidad captora salga de juego.",
+      "name": "Capturar",
+      "nameRef": "Capture"
+    },
+    {
+      "description": "Obtén este efecto cuando esta unidad ataque.",
+      "name": "Atacar",
+      "nameRef": "AttackSkillMark"
+    },
+    {
+      "description": "",
+      "name": "Shurima",
+      "nameRef": "Shurima"
+    },
+    {
+      "description": "",
+      "name": "Noxus",
+      "nameRef": "Noxus"
+    },
+    {
+      "description": "Las cartas con Fugaz se descartan de la mano al final de la ronda.",
+      "name": "Fugaz",
+      "nameRef": "Fleeting"
+    },
+    {
+      "description": "Roba una carta que no sea de campeón del fondo del mazo enemigo.",
+      "name": "Hurtar",
+      "nameRef": "Nab"
+    },
+    {
+      "description": "No se puede lanzar en pleno combate ni como respuesta a otro hechizo. Se resuelve de inmediato.",
+      "name": "Enfoque",
+      "nameRef": "Focus"
+    },
+    {
+      "description": "Activarás Iluminación cuando tengas 10 de maná máximo.",
+      "name": "Iluminación",
+      "nameRef": "Enlightened"
+    },
+    {
+      "description": "Elige una carta Celestial de entre 3 cartas para crearla en tu mano.",
+      "name": "Convocar",
+      "nameRef": "Invoke"
+    },
+    {
+      "description": "Se une a otra carta y la atrapa. Cuando se roba la carta atrapada, aplica su efecto.",
+      "name": "Trampa",
+      "nameRef": "Autoplay"
+    },
+    {
+      "description": "Cura tu nexo por la misma cantidad de daño infligido.",
+      "name": "Drenar",
+      "nameRef": "Drain"
+    },
+    {
+      "description": "Estas habilidades surten efecto cuando muere la unidad.",
+      "name": "Último Aliento",
+      "nameRef": "LastBreath"
+    },
+    {
+      "description": "",
+      "name": "Demacia",
+      "nameRef": "Demacia"
+    },
+    {
+      "description": "Un campeón sube de nivel cuando se cumple la condición, aunque esté en la mano o en el mazo.",
+      "name": "Subo de nivel",
+      "nameRef": "LevelUp"
+    },
+    {
+      "description": "Los hechizos Rápidos se pueden usar en cualquier momento, pero permiten al enemigo responder.",
+      "name": "Rápido",
+      "nameRef": "Fast"
+    },
+    {
+      "description": "",
+      "name": "Aguasturbias",
+      "nameRef": "Bilgewater"
+    },
+    {
+      "description": "La unidad regresa a la mano y desaparecen todos los efectos que la afectan.",
+      "name": "Retirada",
+      "nameRef": "Recall"
+    },
+    {
+      "description": "La unidad con el poder más bajo. Los empates se resuelven con la vida más baja y luego con el costo más bajo.",
+      "name": "Más débil",
+      "nameRef": "Weakest"
+    },
+    {
+      "description": "Los hechizos Lentos se pueden lanzar aunque no estés combatiendo ni lanzando nada. El enemigo puede responder.",
+      "name": "Lento",
+      "nameRef": "Slow"
+    },
+    {
+      "description": "Se elimina por completo del juego. No causa Último Aliento y no se puede revivir.",
+      "name": "Aniquilar",
+      "nameRef": "Obliterate"
+    },
+    {
+      "description": "Estas habilidades se activan al resolver un hechizo.",
+      "name": "Infundir",
+      "nameRef": "Imbue"
+    },
+    {
+      "description": "",
+      "name": "Targón",
+      "nameRef": "MtTargon"
+    },
+    {
+      "description": "",
+      "name": "Islas de la Sombra",
+      "nameRef": "ShadowIsles"
+    },
+    {
+      "description": "Missing Translation",
+      "name": "Missing Translation",
+      "nameRef": "AuraVisualFakeKeyword"
+    },
+    {
+      "description": "",
+      "name": "Jonia",
+      "nameRef": "Ionia"
+    },
+    {
+      "description": "Obtiene un efecto adicional si esta NO es la primera carta que usas en una ronda.",
+      "name": "Anochecer",
+      "nameRef": "Nightfall"
+    },
+    {
+      "description": "",
+      "name": "Piltóver y Zaun",
+      "nameRef": "PiltoverZaun"
+    },
+    {
+      "description": "",
+      "name": "El Fréljord",
+      "nameRef": "Freljord"
+    },
+    {
+      "description": "Missing Translation",
+      "name": "Missing Translation",
+      "nameRef": "Blocked"
+    },
+    {
+      "description": "Cuando se invoca, restablece 1 de maná de hechizos.",
+      "name": "Adáptate",
+      "nameRef": "Attune"
+    },
+    {
+      "description": "Obtiene un efecto adicional si esta es la PRIMERA carta que usas en una ronda.",
+      "name": "Amanecer",
+      "nameRef": "Daybreak"
+    },
+    {
+      "description": "Missing Translation",
+      "name": "Missing Translation",
+      "nameRef": "SilenceIndividualKeyword"
+    },
+    {
+      "description": "Un efecto tipo hechizo de unidad que les permite reaccionar a los enemigos.",
+      "name": "Habilidad",
+      "nameRef": "Skill"
+    },
+    {
+      "description": "Al atacar, golpea antes Y al mismo tiempo que la unidad defensora.",
+      "name": "Ataque Doble",
+      "nameRef": "DoubleStrike"
+    },
+    {
+      "description": "El enemigo puede desafiar a esta unidad, lo que la obliga a bloquear.",
+      "name": "Vulnerable",
+      "nameRef": "Vulnerable"
+    },
+    {
+      "description": "Solo se puede bloquear con una unidad con Evasión.",
+      "name": "Evasión",
+      "nameRef": "Elusive"
+    },
+    {
+      "description": "Elimina una unidad del combate. No puede atacar ni bloquear durante la ronda.",
+      "name": "Aturdir",
+      "nameRef": "Stun"
+    },
+    {
+      "description": "Missing Translation",
+      "name": "Bloquea cartas con Evasión",
+      "nameRef": "BlockElusive"
+    },
+    {
+      "description": "Cuando mata a una unidad, recibe +1|+1.",
+      "name": "Furia",
+      "nameRef": "Fury"
+    },
+    {
+      "description": "Evita el siguiente daño que reciba la unidad. Dura una ronda.",
+      "name": "Barrera",
+      "nameRef": "Barrier"
+    },
+    {
+      "description": "No puede atacar ni bloquear.",
+      "name": "Inmóvil",
+      "nameRef": "Immobile"
+    },
+    {
+      "description": "Fija en 0 el poder de una unidad durante esta ronda. Se puede cambiar luego.",
+      "name": "Helar",
+      "nameRef": "Frostbite"
+    },
+    {
+      "description": "El exceso de daño que inflige esta unidad a la que defiende se inflige al nexo enemigo.",
+      "name": "Arrollar",
+      "nameRef": "Overwhelm"
+    },
+    {
+      "description": "Al atacar, golpea antes que su defensor.",
+      "name": "Ataque Rápido",
+      "nameRef": "QuickStrike"
+    },
+    {
+      "description": "Recibe 1 menos de daño de todas las fuentes.",
+      "name": "Dureza",
+      "nameRef": "Tough"
+    },
+    {
+      "description": "Se cura por completo al final de cada ronda.",
+      "name": "Regeneración",
+      "nameRef": "Regeneration"
+    },
+    {
+      "description": "Anula todo el texto y palabras clave de una unidad.",
+      "name": "Silenciado",
+      "nameRef": "Silenced"
+    },
+    {
+      "description": "Anula el siguiente hechizo o habilidad del enemigo que afectaría a esta unidad.",
+      "name": "Escudo Antihechizos",
+      "nameRef": "SpellShield"
+    },
+    {
+      "description": "El daño que inflige esta unidad cura su nexo en la misma cantidad.",
+      "name": "Robo de Vida",
+      "nameRef": "Lifesteal"
+    },
+    {
+      "description": "Cuando juegas una carta creada, esta unidad recibe +1|+0.",
+      "name": "Aumento",
+      "nameRef": "Augment"
+    },
+    {
+      "description": "En cada ronda, la primera vez que ataquen únicamente unidades con Explorar, prepara tu ataque.",
+      "name": "Explorar",
+      "nameRef": "Scout"
+    },
+    {
+      "description": "Esta unidad muere cuando ataca o cuando termina la ronda.",
+      "name": "Endeble",
+      "nameRef": "Ephemeral"
+    },
+    {
+      "description": "Puede elegir la unidad enemiga que va a bloquear.",
+      "name": "Desafío",
+      "nameRef": "Challenger"
+    },
+    {
+      "description": "Solo se puede bloquear con enemigos que tengan 3 o más de poder.",
+      "name": "Temible",
+      "nameRef": "Fearsome"
+    },
+    {
+      "description": "",
+      "name": "No bloquea",
+      "nameRef": "CantBlock"
+    },
+    {
+      "description": "",
+      "name": "Profundidad",
+      "nameRef": "Deep"
+    }
+  ],
+  "regions": [
+    {
+      "abbreviation": "MT",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-targon.png",
+      "name": "Targón",
+      "nameRef": "Targon"
+    },
+    {
+      "abbreviation": "NX",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-noxus.png",
+      "name": "Noxus",
+      "nameRef": "Noxus"
+    },
+    {
+      "abbreviation": "DE",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-demacia.png",
+      "name": "Demacia",
+      "nameRef": "Demacia"
+    },
+    {
+      "abbreviation": "FR",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-freljord.png",
+      "name": "El Fréljord",
+      "nameRef": "Freljord"
+    },
+    {
+      "abbreviation": "SI",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-shadowisles.png",
+      "name": "Islas de la Sombra",
+      "nameRef": "ShadowIsles"
+    },
+    {
+      "abbreviation": "IO",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-ionia.png",
+      "name": "Jonia",
+      "nameRef": "Ionia"
+    },
+    {
+      "abbreviation": "SH",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-shurima.png",
+      "name": "Shurima",
+      "nameRef": "Shurima"
+    },
+    {
+      "abbreviation": "BW",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-bilgewater.png",
+      "name": "Aguasturbias",
+      "nameRef": "Bilgewater"
+    },
+    {
+      "abbreviation": "PZ",
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/regions/icon-piltoverzaun.png",
+      "name": "Piltóver y Zaun",
+      "nameRef": "PiltoverZaun"
+    }
+  ],
+  "spellSpeeds": [
+    {
+      "name": "Lento",
+      "nameRef": "Slow"
+    },
+    {
+      "name": "Ráfaga",
+      "nameRef": "Burst"
+    },
+    {
+      "name": "Rápido",
+      "nameRef": "Fast"
+    }
+  ],
+  "rarities": [
+    {
+      "name": "COMÚN",
+      "nameRef": "Common"
+    },
+    {
+      "name": "RARA",
+      "nameRef": "Rare"
+    },
+    {
+      "name": "ÉPICA",
+      "nameRef": "Epic"
+    },
+    {
+      "name": "Campeón",
+      "nameRef": "Champion"
+    },
+    {
+      "name": "Ninguno",
+      "nameRef": "None"
+    }
+  ],
+  "sets": [
+    {
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/sets/set3.png",
+      "name": "El Llamado de la Montaña",
+      "nameRef": "Set3"
+    },
+    {
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/sets/set1.png",
+      "name": "Fundamentos",
+      "nameRef": "Set1"
+    },
+    {
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/sets/set2.png",
+      "name": "Marea Creciente",
+      "nameRef": "Set2"
+    },
+    {
+      "iconAbsolutePath": "http://dd.b.pvp.net/2_11_0/core/es_mx/img/sets/set4.png",
+      "name": "Imperios de los Ascendidos",
+      "nameRef": "Set4"
+    }
+  ]
+}
