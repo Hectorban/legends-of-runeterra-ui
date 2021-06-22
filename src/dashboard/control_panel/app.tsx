@@ -1,6 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
 import NCGStore, { replicate } from "../../stores/NodecgStore";
 
+import DeckInput from './components/DeckInput';
+
+import './app.scss'
+
 const app:FC = () => {
   const [state, setState] = useState({
     replicants: NCGStore.getReplicants(),
@@ -24,8 +28,10 @@ const app:FC = () => {
   console.log(Replicant)
 
   return (
-    <div>
-      <h1>Hello, this is one of your graphics</h1>    
+    <div id='app'>
+      <div className='app-container'>
+        <DeckInput/>
+      </div>
     </div>
   );
 };
