@@ -35,6 +35,7 @@ const app:FC = () => {
 
   return (
     <div id='app'>
+      <img className='app-background' src='https://i.imgur.com/KDFgZkf.png' alt='Background'/>  
       <div className='app-container'>
         <div id='playerinfo'>
           <PlayerInfo 

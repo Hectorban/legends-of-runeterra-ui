@@ -1,0 +1,64 @@
+body { 
+    background-color: rgba(0, 0, 0, 0); 
+    margin: 0px auto; 
+    overflow: hidden; 
+}
+@mixin fullscrenRes {
+    width: 1920px;
+    height: 1080px;
+}
+
+#app {
+    @include fullscrenRes;
+    display: grid;
+    .app-background, .app-container {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .app-background {
+        z-index: 0;
+    }
+    .app-container {
+        z-index: 1;
+    }
+}
+
+.app-container {
+    width: inherit;
+    height: inherit;
+    display: grid;
+    grid-template-rows: 20% 46% 32%;
+    grid-template-columns: 50% 31% 17%;
+    gap: 1%;
+
+    #playerinfo {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        #playerinfo-container {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30% 7% 7% 46% 10%;
+            grid-template-rows: 1;
+            align-items: center;
+            
+            #playerinfo-name {
+                color: #C29234;
+                font-size: 70px;
+                padding-left: 10%;
+            }
+            .playerinfo-regions, #playerinfo-logo {
+                width: 80%;
+                background-color: #1A3771;
+                border: 2px solid #7d818b;
+                border-radius: 50%;
+            }
+            #playerinfo-logo {
+                grid-column: 5;
+                justify-self: center;
+            }
+        }
+    }
+}
