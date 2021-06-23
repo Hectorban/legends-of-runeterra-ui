@@ -2,6 +2,8 @@ import React, {FC, useEffect, useState} from 'react'
 import { DeckEncoder } from 'runeterra'
 import NCGStore, { replicate } from "../../stores/NodecgStore"
 
+import PlayerInfo from './components/PlayerInfo'
+
 import './app.scss'
 
 const app:FC = () => {
@@ -29,11 +31,17 @@ const app:FC = () => {
       <div>Loading</div>
     )
   }
-  console.log(DeckEncoder.decode(deckCodeRep.deckCode))
+  const deck = DeckEncoder.decode(deckCodeRep.deckCode)
 
   return (
-    <div>
-      <h1>Hello, this is one of your graphics</h1>    
+    <div id='app'>
+      <div className='app-container'>
+        <div id='playerinfo'>
+          <PlayerInfo 
+            deck={deck}
+          />
+        </div>
+      </div>
     </div>
   );
 };
