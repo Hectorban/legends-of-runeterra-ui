@@ -15,11 +15,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     .deckCode-form {
+        width: 100%;
         display: grid;
         margin: 0 auto;
-        .input {
-            text-align: center;
-        }
+        justify-items: center;
         .deckCode-form-submitbutton {
             background-color: purple;
             color: white;
@@ -30,5 +29,32 @@
             letter-spacing: 3px;
             cursor: pointer;
         }
+        .deckCode-form-submitbutton:hover {
+            background-color: rgb(155, 100, 155);
+        }
+        .deckCode-form-submitbutton:active {
+            transition: 0.3s all;
+            transform: translateY(3px);
+            border: 1px solid transparent;
+            opacity: 0.8;
+        }
+        .input {
+            display: block;
+            width: 100%;
+            border: 1px solid white;
+            border-radius: 4px;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        #deckCode {
+            height: 20%;
+            align-self: center;
+        }
+        #deck-code-label {
+            font-size: 25px;
+        }
+
     }
 }

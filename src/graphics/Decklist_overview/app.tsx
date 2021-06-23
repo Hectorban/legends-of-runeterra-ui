@@ -10,7 +10,7 @@ const app:FC = () => {
   });
 
   useEffect(() => {
-    replicate("Replicant"); // You can subscribe to replicants with this method
+    replicate("deckCodeRep"); // You can subscribe to replicants with this method
   }, []);
 
   useEffect(() => {
@@ -22,9 +22,14 @@ const app:FC = () => {
   }, []);
 
   const {
-    replicants: { Replicant }, // Used to take out a replicant from the replicants object
+    replicants: { deckCodeRep }, // Used to take out a replicant from the replicants object
   } = state || {};
-  console.log(Replicant)
+  if (!deckCodeRep) {
+    return (
+      <div>Loading</div>
+    )
+  }
+  console.log(DeckEncoder.decode(deckCodeRep.deckCode))
 
   return (
     <div>

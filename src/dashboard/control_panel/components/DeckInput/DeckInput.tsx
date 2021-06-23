@@ -2,19 +2,21 @@
 import React, { FC } from 'react'
 import {useFormik} from 'formik'
 
+const deckCodeRep = nodecg.Replicant("deckCodeRep")
+
 const DeckInput:FC = () => {
     const formik = useFormik({
         initialValues: {
-            deckCode: 'DeckCode'
+            deckCode: 'CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA'
         },
         onSubmit: (values: unknown) => {
-            console.log(values)
+            deckCodeRep.value = values
         }
     })
 
 	return (
     <form className='deckCode-form' onSubmit={formik.handleSubmit}>
-        <label htmlFor='deckCode'>Deck Code</label>
+        <label id='deck-code-label' htmlFor='deckCode'>Deck Code</label>
         <input
         className='input'
         id='deckCode'
