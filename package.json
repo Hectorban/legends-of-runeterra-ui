@@ -1,7 +1,7 @@
 {
   "name": "legends-of-runeterra-ui",
-  "version": "0.0.0",
-  "description": "nodecg parce template",
+  "version": "2.0.0",
+  "description": "nodecg react parcel template",
   "homepage": "https://github.com/Hectorban/Nodecg-parcel-template",
   "author": "Alysanne <hectorban1234@gmail.com> (http://alysanne.dev/)",
   "files": [
@@ -12,12 +12,14 @@
     "extension"
   ],
   "scripts": {
-    "start": "start npm run watchDashboard && start npm run watchGraphics",
+    "start": "start npm run watchDashboard && start npm run watchGraphics && start npm run watchExtension",
     "watchDashboard": "parcel watch src/dashboard/*.html --out-dir dashboard --public-url ./",
     "watchGraphics": "parcel watch src/graphics/*.html --out-dir graphics --public-url ./",
+    "watchExtension": "parcel watch src/extension/index.ts --out-dir extension --target node",
     "buildDashboard": "parcel build src/dashboard/*.html --out-dir dashboard --public-url ./",
     "buildGraphics": "parcel build src/graphics/*.html --out-dir graphics --public-url ./",
-    "build": "start npm run buildDashboard && start npm run buildGraphics"
+    "buildExtension": "parcel build src/extension/index.ts --out-dir extension --target node",
+    "build": "start npm run buildDashboard && start npm run buildGraphics && start npm run buildExtension"
   },
   "keywords": [
     "template",
@@ -28,33 +30,16 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "panel1",
-        "title": "Panel1",
-        "width": 4,
-        "file": "panel.html",
+        "name": "Legends_of_runeterra",
+        "title": "Control_panel",
+        "file": "control_panel.html",
         "headerColor": "#525F78",
-        "workspace": "Legends of Runeterra"
-      },
-      {
-        "name": "panel2",
-        "title": "Panel2",
-        "width": 2,
-        "file": "panel2.html",
-        "headerColor": "#525F78",
-        "workspace": "Legends of Runeterra"
-      },
-      {
-        "name": "panel3",
-        "title": "Panel3",
-        "width": 2,
-        "file": "panel3.html",
-        "headerColor": "#525F78",
-        "workspace": "Legends of Runeterra"
+        "fullbleed": true
       }
     ],
     "graphics": [
       {
-        "file": "index.html",
+        "file": "Decklist_overview.html",
         "width": 1920,
         "height": 1080
       },
@@ -72,6 +57,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node-fetch": "^2.5.10",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -81,18 +71,18 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "parcel-bundler": "^1.12.5",
     "prettier": "2.2.1",
-    "sass": "^1.32.11"
+    "sass": "^1.35.1",
+    "typescript": "^3.3.3"
   },
   "dependencies": {
     "flux": "^4.0.1",
+    "formik": "^2.2.9",
     "node-fetch": "^2.6.1",
-    "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-loading": "^2.0.3",
+    "react-favicon": "^0.0.23",
     "react-query": "^3.13.8",
-    "runeterra": "^3.0.0",
-    "svg-path-properties": "^1.0.11",
-    "text-to-svg": "^3.1.5"
+    "regenerator-runtime": "^0.13.7",
+    "runeterra": "^3.0.0"
   }
 }

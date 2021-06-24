@@ -1,0 +1,160 @@
+
+@mixin WnH100 {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin fullscrenRes {
+    width: 1920px;
+    height: 1080px;
+}
+
+body { 
+    background-color: rgba(0, 0, 0, 0); 
+    margin: 0px auto; 
+    overflow: hidden; 
+}
+
+#app {
+    @include fullscrenRes;
+    display: grid;
+    .app-background, .app-container {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .app-background {
+        z-index: 0;
+    }
+    .app-container {
+        z-index: 1;
+    }
+}
+
+.app-container {
+    width: inherit;
+    height: inherit;
+    display: grid;
+    grid-template-rows: 20% 46% 32%;
+    grid-template-columns: 50% 31% 17%;
+    gap: 1%;
+
+    #playerinfo {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+        #playerinfo-container {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30% 7% 7% 46% 10%;
+            grid-template-rows: 1;
+            align-items: center;
+            
+            #playerinfo-name {
+                color: #C29234;
+                font-size: 70px;
+                padding-left: 10%;
+            }
+            .playerinfo-regions, #playerinfo-logo {
+                width: 80%;
+                background-color: #1A3771;
+                border: 2px solid #7d818b;
+                border-radius: 50%;
+            }
+            #playerinfo-logo {
+                grid-column: 5;
+                justify-self: center;
+            }
+        }
+    }
+
+
+    #decklist {
+        grid-column: 1;
+        grid-row: 2 / 4;
+        #decklist-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+            grid-auto-flow: column;
+            column-gap: 16px;
+            row-gap: 5px;
+            padding: 10px;
+            .cardAnimation-container {
+                overflow: hidden;
+                border-radius: 22px 0px 0px 22px;
+                .card-container {
+                    display: grid;
+                    grid-template-columns: 15% 73% 12%;
+                    animation: cardmover 4s;
+                    animation-fill-mode: backwards;
+                    justify-items: center;
+                    align-items: center;
+                    .card {
+                        grid-row: 1;
+                    }
+                    .card.-image {
+                        @include WnH100;
+                        grid-column: 1 / 4;
+                        z-index: 1;
+                        opacity: 0.8;
+                        background-color: rgba($color: #000000, $alpha: 0.5);
+                        box-shadow: inset 0 0 10px #000000;
+                    }
+                    .card.-cost-container {
+                        @include WnH100;
+                        grid-column: 1;
+                        z-index: 2;
+                        display: grid;
+                        align-items: center;
+                        justify-items: center;
+                        padding-left: 10px;
+                        padding-top: 2px;
+                        .card-cost {
+                            grid-column: 1;
+                            grid-row: 1;
+                        }
+                        .card-cost.-number{
+                            z-index: 2;
+                            color: white;
+                            font-weight: bolder;
+                            font-size: 120%;
+                        }
+                        .card-cost.-manacircle {
+                            z-index: 1;
+                            width: 115%;
+                        }
+                    }
+                    .card.-name {
+                        grid-column: 2;
+                        z-index: 2;
+                        color: white;
+                        justify-self: start;
+                        padding-left: 15px;
+                    }
+                    .card.-count {
+                        @include WnH100;
+                        grid-column: 3;
+                        z-index: 2;
+                        background-color: rgb(30,30,30);
+                        display: flex;
+                        justify-content: center;
+                        .card.-count-number {
+                            color: white;   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes cardmover {
+    0% { 
+        transform: translateX(-200%); 
+    }
+    100% { 
+        transform: translateX(0%); 
+    }
+}
