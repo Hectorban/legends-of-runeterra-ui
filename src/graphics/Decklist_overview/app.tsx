@@ -3,6 +3,7 @@ import { DeckEncoder } from 'runeterra'
 import NCGStore, { replicate } from "../../stores/NodecgStore"
 
 import PlayerInfo from './components/PlayerInfo'
+import DeckList from './components/DeckList'
 
 import './app.scss'
 
@@ -41,6 +42,11 @@ const app:FC = () => {
           <PlayerInfo 
             deck={deck}
           />
+        <div id='decklist'>
+          <DeckList 
+            deck={deck}
+          />
+        </div>
         </div>
       </div>
     </div>

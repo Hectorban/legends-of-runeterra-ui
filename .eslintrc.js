@@ -35,6 +35,7 @@ module.exports = {
     "global-require": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": "off",
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    "react/no-array-index-key": "off"
   },
 };
