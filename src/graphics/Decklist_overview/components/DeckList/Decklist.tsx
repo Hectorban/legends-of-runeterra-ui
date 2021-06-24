@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import Card from './Card'
 import { CardType } from '~types/cardTypes'
+import Card from './Card'
 
 interface Props {
     deck: CardType[]

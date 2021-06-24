@@ -26,7 +26,6 @@ const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
         )
     }
 
-    const cardImage = `https://cdn-lor.mobalytics.gg/production/images/cards-preview/${code}.webp`
     const {name, cost, type} = ddCardData
     const CardTypeIndex = {
         'Unidad': 1,
@@ -35,10 +34,11 @@ const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
         'Trampa': 3,
         'Hito': 3
     }
+    
+    const cardImage = `https://cdn-lor.mobalytics.gg/production/images/cards-preview/${code}.webp`
     const cardColumn = CardTypeIndex[type]
     const cardAniStyle = {animationDelay: `${cardNumber*150}ms`}
     const cardColIndex = {gridColumn: cardColumn}
-    console.log(faction)
 	return (
     <div className='cardAnimation-container' style={cardColIndex}>
 		<div className='card-container' style={cardAniStyle}>

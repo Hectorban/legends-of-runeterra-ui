@@ -4,6 +4,7 @@ import NCGStore, { replicate } from "../../stores/NodecgStore"
 
 import PlayerInfo from './components/PlayerInfo'
 import DeckList from './components/DeckList'
+import KeyCards from './components/KeyCards'
 
 import './app.scss'
 
@@ -46,6 +47,11 @@ const app:FC = () => {
         </div>
         <div id='decklist'>
           <DeckList 
+            deck={deck}
+          />
+        </div>
+        <div id='keycards'>
+          <KeyCards 
             deck={deck}
           />
         </div>
