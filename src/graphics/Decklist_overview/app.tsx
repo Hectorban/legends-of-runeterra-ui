@@ -27,6 +27,7 @@ const app:FC = () => {
   const {
     replicants: { deckCodeRep }, // Used to take out a replicant from the replicants object
   } = state || {};
+
   if (!deckCodeRep) {
     return (
       <div>Loading</div>
@@ -42,11 +43,11 @@ const app:FC = () => {
           <PlayerInfo 
             deck={deck}
           />
+        </div>
         <div id='decklist'>
           <DeckList 
             deck={deck}
           />
-        </div>
         </div>
       </div>
     </div>

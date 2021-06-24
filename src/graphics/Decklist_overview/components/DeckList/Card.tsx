@@ -1,33 +1,55 @@
 import React, { FC, useState, useEffect } from 'react'
-import { CardType } from '~types/cardTypes'
+import { Faction, DDCardDatatype } from '~types/cardTypes'
 
-interface Props extends CardType {
+interface Props {
     cardNumber: number
+    code: string
+    count: number
+    faction: Faction
 }
 
-const cardDataRep = nodecg.Replicant<any>('ddCardData')
-const Card:FC<Props> = ({cardNumber, code, count, set, id, faction}:Props) => {
-    const [ddCardData, setddCardData] = useState({})
-
+const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
+    const [ddCardData, setddCardData] = useState<DDCardDatatype>()
     useEffect(() => {
-        const fetcddInfo = async () => {
-            await NodeCG.waitForReplicants(cardDataRep)
-            setddCardData(cardDataRep.value)
+        const fetccardInfo = async () => {
+            const response = await nodecg.sendMessage('ddcardData', code)
+            setddCardData(response)
         }
-        fetcddInfo()
+        fetccardInfo()
     }, [])
 
     if(!ddCardData) {
         return (
             <div>
-                Loading...
+                ...
             </div>
         )
-    } 
+    }
 
+    const cardImage = `https://cdn-lor.mobalytics.gg/production/images/cards-preview/${code}.webp`
+    const {name, cost, type} = ddCardData
+    const CardTypeIndex = {
+        'Unidad': 1,
+        'Hechizo': 2,
+        'Habilidad':2,
+        'Trampa': 3,
+        'Hito': 3
+    }
+    const cardColumn = CardTypeIndex[type]
+    const cardStyle = {
+        gridColumn: cardColumn,
+        animationDelay: `${cardNumber*150}ms`,
+    }
+    console.log(faction)
 	return (
-		<div>
-			a
+		<div id='card-container' style={cardStyle}>
+			<img id='card-image' src={cardImage} alt=''/>
+            <p id='card-count'>{count}</p>
+            <p id='card-name'>{name}</p>
+            <div id='card-cost-container'>
+                <img id='card-cost-manacircle' src='https://i.imgur.com/wqqvnzt.png' alt=''/>
+                <p id='card-cost-number'>{cost}</p>
+            </div>
 		</div>
 	)
 }

@@ -10,3 +10,10 @@ export interface Faction {
     id:        number;
     shortCode: string;
 }
+
+export interface DDCardDatatype {
+    name:      string;
+    cost:      number;
+    type:      string;
+    supertype: string;
+}

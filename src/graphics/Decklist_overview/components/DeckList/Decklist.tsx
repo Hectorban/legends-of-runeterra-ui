@@ -9,15 +9,13 @@ interface Props {
 const Decklist:FC<Props> = ({deck}:Props) => (
     <div id='decklist-container'>
         {deck.map((card, i) => {
-            const {code, count, set, id, faction} = card
+            const {code, count, faction} = card
             return (
                 <Card 
                     key={i}
                     cardNumber={i}
                     code={code}
                     count={count}
-                    set={set}
-                    id={id}
                     faction={faction}
                 />
             )

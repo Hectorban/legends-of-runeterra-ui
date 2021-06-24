@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-export interface Cardtypes {
+export interface DDcardTypes {
     associatedCards:       any[];
     associatedCardRefs:    string[];
     assets:                Asset[];
@@ -19,7 +19,7 @@ export interface Cardtypes {
     keywords:              string[];
     keywordRefs:           string[];
     spellSpeed:            SpellSpeed;
-    spellSpeedRef:         SpellSpeed;
+    spellSpeedRef:         SpellSpeedRef;
     rarity:                Rarity;
     rarityRef:             RarityRef;
     subtype:               Subtype;
@@ -31,19 +31,18 @@ export interface Cardtypes {
 }
 
 export enum ArtistName {
-    AlexHeath = "Alex Heath",
     AronElekes = "Aron Elekes",
-    BenSkutt = "Ben Skutt",
     DAOLE = "Dao Le",
-    Empty = "",
+    GrafitStudio = "Grafit Studio",
     JiHunLee = "JiHun Lee",
+    JihunLee = "Jihun Lee",
     KudosProductions = "Kudos Productions",
+    MARStudio = "MAR Studio",
     MaxGrecke = "Max Grecke",
-    OliverChipping = "Oliver Chipping",
-    OriginalForce = "Original Force",
-    RafaelZanchetin = "Rafael Zanchetin",
+    PolarEngine = "Polar Engine",
+    PolarEngineStudio = "Polar Engine Studio",
     Sixmorevodka = "SIXMOREVODKA",
-    WildBlueStudios = "Wild Blue Studios",
+    WildBlueStudio = "Wild Blue Studio",
 }
 
 export interface Asset {
@@ -52,11 +51,11 @@ export interface Asset {
 }
 
 export enum Rarity {
-    Champion = "Champion",
-    Common = "COMMON",
-    Epic = "EPIC",
-    None = "None",
-    Rare = "RARE",
+    Campeón = "Campeón",
+    Común = "COMÚN",
+    Ninguno = "Ninguno",
+    Rara = "RARA",
+    Épica = "ÉPICA",
 }
 
 export enum RarityRef {
@@ -68,28 +67,42 @@ export enum RarityRef {
 }
 
 export enum Region {
+    Aguasturbias = "Aguasturbias",
     Demacia = "Demacia",
-    Freljord = "Freljord",
-    Ionia = "Ionia",
+    ElFréljord = "El Fréljord",
+    IslasDeLaSombra = "Islas de la Sombra",
+    Jonia = "Jonia",
     Noxus = "Noxus",
-    PiltoverZaun = "Piltover & Zaun",
-    ShadowIsles = "Shadow Isles",
+    PiltóverYZaun = "Piltóver y Zaun",
+    Targón = "Targón",
 }
 
 export enum RegionRef {
+    Bilgewater = "Bilgewater",
     Demacia = "Demacia",
     Freljord = "Freljord",
     Ionia = "Ionia",
     Noxus = "Noxus",
     PiltoverZaun = "PiltoverZaun",
     ShadowIsles = "ShadowIsles",
+    Targon = "Targon",
 }
 
 export enum Set {
     Set1 = "Set1",
+    Set2 = "Set2",
+    Set3 = "Set3",
+    Set4 = "Set4",
 }
 
 export enum SpellSpeed {
+    Empty = "",
+    Lento = "Lento",
+    Ráfaga = "Ráfaga",
+    Rápido = "Rápido",
+}
+
+export enum SpellSpeedRef {
     Burst = "Burst",
     Empty = "",
     Fast = "Fast",
@@ -97,24 +110,24 @@ export enum SpellSpeed {
 }
 
 export enum Subtype {
-    Dragon = "DRAGON",
-    Elite = "ELITE",
-    Elnuk = "ELNUK",
+    ArmaLunar = "ARMA LUNAR",
+    Celestial = "CELESTIAL",
+    Dragón = "DRAGÓN",
     Empty = "",
     Poro = "PORO",
-    Spider = "SPIDER",
-    Tech = "TECH",
-    Yeti = "YETI",
+    Élite = "ÉLITE",
 }
 
 export enum Supertype {
-    Champion = "Champion",
+    Campeón = "Campeón",
     Empty = "",
 }
 
 export enum Type {
-    Ability = "Ability",
-    Spell = "Spell",
-    Trap = "Trap",
-    Unit = "Unit",
+    Habilidad = "Habilidad",
+    Hechizo = "Hechizo",
+    Hito = "Hito",
+    Unidad = "Unidad",
+    Trampa = "Trampa",
 }
+
