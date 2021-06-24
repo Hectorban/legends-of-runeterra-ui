@@ -147,6 +147,48 @@ body {
             }
         }
     }
+
+    #keycards {
+        grid-column: 2 / 4;
+        grid-row: 2;
+        #keycards-container {
+            @include WnH100;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            justify-items: center;
+            .keycard-container {
+                @include WnH100;
+                display: grid;
+                transform-style: preserve-3d;
+                align-items: center;
+                justify-items: center;
+                .keycard-face {
+                    width: 90%;
+                    grid-row: 1;
+                    grid-column: 1;
+                    backface-visibility: hidden;
+                    transition: 2s ease-in-out;
+                    transform: perspective(500px) rotateY(0deg);
+                }
+                .keycard-face.front {
+                    animation: keycardmoverfront 2s;
+                    animation-fill-mode: forwards;
+                    transform: perspective(500px) rotateY(180deg);
+                    .keycard-image {
+                        width: 100%;
+                    }
+                }
+                .keycard-face.back {
+                    animation: keycardmoverback 2s;
+                    animation-fill-mode: forwards;
+                    .keycard-image {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @keyframes cardmover {
@@ -155,5 +197,16 @@ body {
     }
     100% { 
         transform: translateX(0%); 
+    }
+}
+
+@keyframes keycardmoverback {
+    to {
+        transform: perspective(500px) rotateY(180deg);
+    }
+}
+@keyframes keycardmoverfront {
+    to {
+        transform: perspective(500px) rotateY(360deg);
     }
 }

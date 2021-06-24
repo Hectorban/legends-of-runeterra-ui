@@ -11,12 +11,12 @@ interface Props {
 const KeyCard:FC<Props> = ({code, set, faction, order}: Props) => {
 	const keyCardImage = `https://dd.b.pvp.net/latest/set${set}/es_mx/img/cards/${code}.png`
 	return (
-		<div className='keycard-container'>
-			<div className='keycard-faceback'>
-				<img className='keycard-faceback-image' src='https://i.imgur.com/BvWaURf.png' alt=''/>
+		<div className='keycard-container' >
+			<div className='keycard-face back' style={{animationDelay:`${order*2000}ms`}}>
+				<img className='keycard-image' src='https://i.imgur.com/BvWaURf.png' alt=''/>
 			</div>
-			<div className='keycard-facefront'>
-				<img className='keycard-facefront-image' src={keyCardImage} alt=''/>
+			<div className='keycard-face front' style={{animationDelay:`${order*2000}ms`}}>
+				<img className='keycard-image' src={keyCardImage} alt=''/>
 			</div>
 		</div>
 	)
