@@ -36,21 +36,23 @@ const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
         'Hito': 3
     }
     const cardColumn = CardTypeIndex[type]
-    const cardStyle = {
-        gridColumn: cardColumn,
-        animationDelay: `${cardNumber*150}ms`,
-    }
+    const cardAniStyle = {animationDelay: `${cardNumber*150}ms`}
+    const cardColIndex = {gridColumn: cardColumn}
     console.log(faction)
 	return (
-		<div id='card-container' style={cardStyle}>
-			<img id='card-image' src={cardImage} alt=''/>
-            <p id='card-count'>{count}</p>
-            <p id='card-name'>{name}</p>
-            <div id='card-cost-container'>
-                <img id='card-cost-manacircle' src='https://i.imgur.com/wqqvnzt.png' alt=''/>
-                <p id='card-cost-number'>{cost}</p>
+    <div className='cardAnimation-container' style={cardColIndex}>
+		<div className='card-container' style={cardAniStyle}>
+			<img className='card -image' src={cardImage} alt=''/>
+            <div className='card -count'>
+                <p className='card -count-number'>{count}</p>
+            </div>
+            <div className='card -name'>{name}</div>
+            <div className='card -cost-container'>
+                <img className='card-cost -manacircle' src='https://i.imgur.com/wqqvnzt.png' alt=''/>
+                <div className='card-cost -number'>{cost}</div>
             </div>
 		</div>
+    </div>
 	)
 }
 
