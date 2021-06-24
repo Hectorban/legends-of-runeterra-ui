@@ -5,6 +5,7 @@ import NCGStore, { replicate } from "../../stores/NodecgStore"
 import PlayerInfo from './components/PlayerInfo'
 import DeckList from './components/DeckList'
 import KeyCards from './components/KeyCards'
+import DeckCode from './components/DeckCode'
 
 import './app.scss'
 
@@ -53,6 +54,11 @@ const app:FC = () => {
         <div id='keycards'>
           <KeyCards 
             deck={deck}
+          />
+        </div>
+        <div id='deckcode'>
+          <DeckCode 
+            deckCode={deckCodeRep.deckCode}
           />
         </div>
       </div>
