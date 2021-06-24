@@ -59,6 +59,7 @@ const app:FC = () => {
           />
         </div>
         <div id='deckcode'>
+          <img id='deckcode-background' src='https://i.imgur.com/DzvlsSv.png' alt='deckcode-background'/>
           <DeckCode 
             deckCode={deckCodeRep.deckCode}
           />

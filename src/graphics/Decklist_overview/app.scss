@@ -77,10 +77,6 @@ body {
             grid-column: 1;
             grid-row: 1;
         }
-        #decklist-background {
-            width: 100%;
-            height: 100%;
-        }
         #decklist-container {
             height: 86%;
             z-index: 2;
@@ -90,7 +86,7 @@ body {
             grid-auto-flow: column;
             column-gap: 15px;
             row-gap: 2px;
-            padding: 25px 25px 0px 25px;
+            padding: 25px 53px 0px 25px;
             .cardAnimation-container {
                 overflow: hidden;
                 border-radius: 22px 10px 0px 22px;
@@ -176,6 +172,7 @@ body {
             @include WnH100;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            height: 99%;
             align-items: center;
             justify-items: center;
             .keycard-container {
@@ -214,6 +211,13 @@ body {
     #deckcode {
         grid-column: 3;
         grid-row: 3;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        #deckcode-container, #deckcode-background {
+            grid-column: 1;
+            grid-row: 1;
+        }
     }
 }
 

@@ -9,7 +9,7 @@ const DeckCode:FC<Props> = ({deckCode}: Props) => (
 		<QRCode
 			className='deckcode-qr'
 			value={deckCode}
-			size={160}
+			size={200}
 			bgColor="#ffffff"
     	    fgColor="#000000"
     	    level="L"
