@@ -47,11 +47,13 @@ const app:FC = () => {
           />
         </div>
         <div id='decklist'>
+          <img id='decklist-background' src='https://i.imgur.com/r1zkkQx.png' alt='decklist background'/>
           <DeckList 
             deck={deck}
           />
         </div>
         <div id='keycards'>
+          <img id='keycards-background' src='https://i.imgur.com/hW1TO9G.png' alt='keycards-background'/>
           <KeyCards 
             deck={deck}
           />
