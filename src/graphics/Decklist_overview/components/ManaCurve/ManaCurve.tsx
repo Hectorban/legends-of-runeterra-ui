@@ -1,5 +1,6 @@
+/* eslint-disable no-param-reassign */
 import React, { FC, useState, useEffect } from 'react'
-import { BarChart, Bar, XAxis, YAxis } from 'recharts'
+import { BarChart, Bar, XAxis } from 'recharts'
 import { CardType, DDCardDatatype } from '~types/cardTypes'
 
 import ManaPylon from './svg/ManaPylon'
@@ -27,43 +28,47 @@ const ManaCurve:FC<Props> = ({deck}: Props) => {
 	}
 	const manaCurveData = [
 		{
-    	"name": "x0",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x1",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x2",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x3",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x4",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x5",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x6",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x7",
+    	"name": "",
     	"cost": 0
 		}, 
 		{
-    	"name": "x8",
+    	"name": "",
     	"cost": 0
 		},
 		{
-    	"name": "x9",
+    	"name": "",
+    	"cost": 0
+		}, 
+		{
+    	"name": "",
     	"cost": 0
 		} 
 	]
@@ -72,11 +77,19 @@ const ManaCurve:FC<Props> = ({deck}: Props) => {
 		const cardCost = ddCardInfo[code].cost
 		manaCurveData[cardCost].cost += count
 	})
-	console.log(manaCurveData)
+	manaCurveData.map((datakey) => {
+		datakey.name = `x${datakey.cost}` 
+	})
 	return (
 		<div id='manacurve-containter'>
-			<img className='image' src='https://i.imgur.com/CBIJyse.png' alt='' />
-			<img className='image' src='https://i.imgur.com/cfcnMJM.png' alt='' />
+			<img className='manacurve-container-background' src='https://i.imgur.com/Gaf3TJp.png' alt='' />
+			<BarChart width={425} height={330} data={manaCurveData}>
+				<XAxis dataKey="name" tick={{stroke: '#aa8f61'}}/>
+				<Bar dataKey="cost" 
+					fill="#00D4D5"
+					animationDuration={5000}
+					shape={<ManaPylon />} />
+  			</BarChart>
 		</div>
 	)
 }
