@@ -12,8 +12,6 @@ class NCGStore extends EventEmitter {
 
   constructor() {
     super()
-    // Default values that will be overwritten on replicant declaration
-    // They are not actually nessesary, they are just here for the sake of not handling 'undefined' at the component mount
     this.replicants = {}
   }
 
@@ -28,7 +26,6 @@ class NCGStore extends EventEmitter {
     }
   }
 }
-
 
 // Going slightly against the pattern, but dispatching events
 // in this store kind of makes sense since we only, in fact, have a single "setter" action that will bind our state to corresponding
