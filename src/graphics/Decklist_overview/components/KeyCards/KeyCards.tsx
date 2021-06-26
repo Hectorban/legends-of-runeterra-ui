@@ -33,14 +33,13 @@ const KeyCards:FC<Props> = ({deck}:Props) => {
 	return (
 		<div id='keycards-container'>
 			{keyCardArray.map((keyCard, i) => {
-				const {set, code, faction} = keyCard
+				const {set, code} = keyCard
 				return (
 					<KeyCard 
 						key={i}
 						order={i}
 						set={set}
 						code={code}
-						faction={faction}
 					/>
 				)
 			})}
