@@ -3,9 +3,10 @@ import { CardType } from '~types/cardTypes'
 
 interface Props {
     deck: CardType[]
+    name: string
 }
 
-const PlayerInfo:FC<Props> = ({deck}:Props) => {
+const PlayerInfo:FC<Props> = ({deck, name}:Props) => {
     const ddImageNames = {      // These are the names where you can find the images of the faction icons in data dragon:
         "BW": "bilgewater",     // `https://dd.b.pvp.net/latest/core/es_mx/img/regions/icon-${name}.png`
         "DE": "demacia",
@@ -40,7 +41,7 @@ const PlayerInfo:FC<Props> = ({deck}:Props) => {
 
 	return (
 		<div id='playerinfo-container'>
-			<p id='playerinfo-name'>Alysanne</p>
+			<p id='playerinfo-name'>{name}</p>
             <img className='playerinfo-regions' src={region1} alt={ddImageNames[topWeight[0][0]]}/> 
             <img className='playerinfo-regions' src={region2} alt={ddImageNames[topWeight[1][0]]}/>
             <img id='playerinfo-logo' src='https://i.imgur.com/tkK0ApW.png' alt='Logo'/>

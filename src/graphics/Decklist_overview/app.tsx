@@ -45,6 +45,7 @@ const app:FC = () => {
         <div id='playerinfo'>
           <PlayerInfo 
             deck={deck}
+            name={deckCodeRep.name}
           />
         </div>
         <div id='decklist'>

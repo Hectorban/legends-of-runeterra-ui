@@ -25,7 +25,6 @@ const app:FC = () => {
   const {
     replicants: { Replicant }, // Used to take out a replicant from the replicants object
   } = state || {};
-  console.log(Replicant)
 
   return (
     <div id='app'>

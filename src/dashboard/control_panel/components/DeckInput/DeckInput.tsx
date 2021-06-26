@@ -7,7 +7,8 @@ const deckCodeRep = nodecg.Replicant("deckCodeRep")
 const DeckInput:FC = () => {
     const formik = useFormik({
         initialValues: {
-            deckCode: 'CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA'
+            deckCode: 'CECAEBAHDIXQGAIFEIYDCAQEAUBRAAICAUCAEBABAUFRSKBUAQCAOAR3KF4QA',
+            name: "Alysanne"
         },
         onSubmit: (values: unknown) => {
             deckCodeRep.value = values
@@ -16,7 +17,7 @@ const DeckInput:FC = () => {
 
 	return (
     <form className='deckCode-form' onSubmit={formik.handleSubmit}>
-        <label id='deck-code-label' htmlFor='deckCode'>Deck Code</label>
+        <label className='deck-code-label' htmlFor='deckCode'>Deck Code</label>
         <input
         className='input'
         id='deckCode'
@@ -24,6 +25,15 @@ const DeckInput:FC = () => {
         type='text'
         onChange={formik.handleChange}
         value={formik.values.deckCode}
+        />
+        <label id='deck-code-label' htmlFor='name'>Nombre</label>
+        <input
+        className='input'
+        id='name'
+        name='name'
+        type='text'
+        onChange={formik.handleChange}
+        value={formik.values.name}
         />
         <button className='deckCode-form-submitbutton' type='submit'>Actualizar</button>
     </form>
