@@ -42,7 +42,9 @@ const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
 	return (
     <div className='cardAnimation-container' style={cardColIndex}>
 		<div className='card-container' style={cardAniStyle}>
-			<img className='card -image' src={cardImage} alt=''/>
+            <div className='card -image'>
+                <img className='card -image-image' src={cardImage} alt=''/>
+            </div>
             <div className='card -count'>
                 <p className='card -count-number'>{count}</p>
             </div>
