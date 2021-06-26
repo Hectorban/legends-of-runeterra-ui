@@ -6,6 +6,7 @@ import PlayerInfo from './components/PlayerInfo'
 import DeckList from './components/DeckList'
 import KeyCards from './components/KeyCards'
 import DeckCode from './components/DeckCode'
+import ManaCurve from './components/ManaCurve'
 
 import './app.scss'
 
@@ -48,18 +49,28 @@ const app:FC = () => {
         </div>
         <div id='decklist'>
           <img id='decklist-background' src='https://i.imgur.com/r1zkkQx.png' alt='decklist background'/>
+          <div id='decklist-label'>Cartas</div>
           <DeckList 
             deck={deck}
           />
         </div>
         <div id='keycards'>
-          <img id='keycards-background' src='https://i.imgur.com/hW1TO9G.png' alt='keycards-background'/>
+          <img id='keycards-background' src='https://i.imgur.com/hW1TO9G.png' alt='keycards background'/>
+          <div id='keycards-label'>Cartas clave</div>
           <KeyCards 
             deck={deck}
           />
         </div>
+        <div id='manacurve'>
+          <img id='manacurve-background' src='https://i.imgur.com/lRjTMTI.png' alt='manacurve background'/>
+          <div id='manacurve-label'>Curva de maná</div>
+          <ManaCurve 
+            deck={deck}  
+          />
+        </div>
         <div id='deckcode'>
           <img id='deckcode-background' src='https://i.imgur.com/DzvlsSv.png' alt='deckcode-background'/>
+          <div id='deckcode-label'>Codigo de el deck</div>
           <DeckCode 
             deckCode={deckCodeRep.deckCode}
           />

@@ -73,20 +73,61 @@ body {
         grid-column: 1;
         grid-row: 2 / 4;
         display: grid;
-        #decklist-container, #decklist-background {
+        grid-template-rows: 95% 5%;
+        #decklist-container, #decklist-background{
             grid-column: 1;
             grid-row: 1;
         }
+        #decklist-label {
+            width: 15%;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: #C29234;
+            font-size: 40px;
+            background-image: url('https://i.imgur.com/hW1TO9G.png');
+            background-size: 100% 100%;
+            border-radius: 50px;
+        }
         #decklist-container {
-            height: 86%;
+            height: 97%;
             z-index: 2;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(15, 1fr);
+            grid-template-rows: repeat(16, 1fr);
             grid-auto-flow: column;
             column-gap: 15px;
             row-gap: 2px;
-            padding: 25px 53px 0px 25px;
+            padding: 0px 53px 0px 25px;
+            position: relative;
+            bottom: 25px;
+            .decklist {
+                width: 100%;
+                height: 100%;
+                grid-row: 1;
+                align-items: center;
+                justify-items: center;
+                text-align: center;
+                background-image: url('https://i.imgur.com/hW1TO9G.png');
+                background-size: 100% 100%;
+                border-radius: 20px;
+                .decklist-column-text {
+                    width: 100%;
+                    height: 100%;
+                    align-self: center;
+                    color: #C29234;
+                    font-size: 35px;
+                }
+            }
+            .decklist.-firstcolumn {
+                grid-column: 1;
+            }
+            .decklist.-secondcolumn {
+                grid-column: 2;
+            }
+            .decklist.-thirdcolumn {
+                grid-column: 3;
+            }
             .cardAnimation-container {
                 overflow: hidden;
                 border-radius: 22px 10px 0px 22px;
@@ -106,9 +147,11 @@ body {
                         @include WnH100;
                         grid-column: 1 / 4;
                         z-index: 1;
-                        opacity: 0.8;
-                        background-color: rgba($color: #000000, $alpha: 0.5);
-                        box-shadow: inset 0 0 10px #000000;
+                        background-color: black;
+                        .card.-image-image {
+                            @include WnH100;
+                            opacity: 0.65;
+                        }
                     }
                     .card.-cost-container {
                         @include WnH100;
@@ -140,9 +183,9 @@ body {
                     .card.-name {
                         grid-column: 2;
                         z-index: 2;
-                        color: white;
                         justify-self: start;
                         padding-left: 15px;
+                        color: white;
                     }
                     .card.-count {
                         @include WnH100;
@@ -164,9 +207,21 @@ body {
         grid-column: 2 / 4;
         grid-row: 2;
         display: grid;
+        grid-template-rows: 95% 5%;
         #keycards-container, #keycards-background {
             grid-column: 1;
             grid-row: 1;
+        }
+        #keycards-label {
+            width: 30%;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: #C29234;
+            font-size: 40px;
+            background-image: url('https://i.imgur.com/hW1TO9G.png');
+            background-size: 100% 100%;
+            border-radius: 50px;
         }
         #keycards-container {
             @include WnH100;
@@ -214,9 +269,59 @@ body {
         display: grid;
         align-items: center;
         justify-items: center;
+        grid-template-rows: 95% 5%;
         #deckcode-container, #deckcode-background {
             grid-column: 1;
             grid-row: 1;
+        }
+        #deckcode-label {
+            position: relative;
+            bottom: 20px;
+            width: 80%;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: #C29234;
+            font-size: 30px;
+            background-image: url('https://i.imgur.com/hW1TO9G.png');
+            background-size: 100% 100%;
+            border-radius: 50px;
+        }
+    }
+
+    #manacurve {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-rows: 90% 10%;
+        #manacurve-containter, #manacurve-background {
+            grid-column: 1;
+            grid-row: 1;
+            position: relative;
+            top: 7px;
+        }
+        #manacurve-label {
+            position: relative;
+            bottom: 10px;
+            z-index: 2;
+            width: 50%;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            color: #C29234;
+            font-size: 30px;
+            background-image: url('https://i.imgur.com/hW1TO9G.png');
+            background-size: 100% 100%;
+            border-radius: 50px;
+        }
+        #manacurve-containter {
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            .image {
+                grid-column: 1;
+                grid-row: 1;
+            }
         }
     }
 }
