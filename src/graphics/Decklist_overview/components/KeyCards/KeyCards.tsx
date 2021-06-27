@@ -30,6 +30,14 @@ const KeyCards:FC<Props> = ({deck}:Props) => {
 			keyCardArray.push(card)
 		}
 	})
+	if(keyCardArray) {
+		deck.map((card) => {
+			const {code} = card
+			if(ddCardInfo[code].cost >= 8) {
+				keyCardArray.push(card)
+			}
+		})
+	}
 	return (
 		<div id='keycards-container'>
 			{keyCardArray.map((keyCard, i) => {

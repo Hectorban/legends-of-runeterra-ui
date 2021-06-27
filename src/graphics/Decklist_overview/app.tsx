@@ -71,7 +71,7 @@ const app:FC = () => {
         </div>
         <div id='deckcode'>
           <img id='deckcode-background' src='https://i.imgur.com/DzvlsSv.png' alt='deckcode-background'/>
-          <div id='deckcode-label'>Codigo de el deck</div>
+          <div id='deckcode-label'>Codigo de el mazo</div>
           <DeckCode 
             deckCode={deckCodeRep.deckCode}
           />
