@@ -7,11 +7,21 @@ import DeckList from './components/DeckList'
 import KeyCards from './components/KeyCards'
 import DeckCode from './components/DeckCode'
 import ManaCurve from './components/ManaCurve'
-
 import './app.scss'
 
+interface deckCodeRepTypes {
+  deckCode: string
+  name: string
+}
+interface RepObjectTypes {
+  deckCodeRep: deckCodeRepTypes
+}
+interface ReplicantsTypes {
+  replicants: RepObjectTypes  
+}
+
 const app:FC = () => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<ReplicantsTypes>({
     replicants: NCGStore.getReplicants(),
   });
 
@@ -36,7 +46,8 @@ const app:FC = () => {
       <div>Loading</div>
     )
   }
-  const deck = DeckEncoder.decode(deckCodeRep.deckCode)
+  const {name, deckCode} = deckCodeRep
+  const deck = DeckEncoder.decode(deckCode)
 
   return (
     <div id='app'>
@@ -45,7 +56,7 @@ const app:FC = () => {
         <div id='playerinfo'>
           <PlayerInfo 
             deck={deck}
-            name={deckCodeRep.name}
+            name={name}
           />
         </div>
         <div id='decklist'>
@@ -73,7 +84,7 @@ const app:FC = () => {
           <img id='deckcode-background' src='https://i.imgur.com/DzvlsSv.png' alt='deckcode-background'/>
           <div id='deckcode-label'>Codigo de el mazo</div>
           <DeckCode 
-            deckCode={deckCodeRep.deckCode}
+            deckCode={deckCode}
           />
         </div>
       </div>
