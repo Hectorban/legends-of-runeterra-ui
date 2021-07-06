@@ -21,10 +21,16 @@ cd bundles
 git clone https://github.com/Hectorban/legends-of-runeterra-ui.git 
 cd legends-of-runeterra-ui
 ```
-3. Install dependencies and build the bundle with `npm`
+3. Install dependencies and build the bundle with `npm` o `yarn`
+npm
 ```bash
 npm i
 npm run build
+```
+yarn
+```bash
+yarn install
+yarn run build
 ```
 
 4. Start nodecg
