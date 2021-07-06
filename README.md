@@ -18,8 +18,8 @@ nodecg setup
 2. Copy/clone the repo into your `bundles` folder that is located in the root folder of your NodeCG instance.
 ```bash
 cd bundles
-git clone https://github.com/Hectorban/league-of-legends-ui.git
-cd League-of-legends-nodecg-ui
+git clone https://github.com/Hectorban/legends-of-runeterra-ui.git 
+cd legends-of-runeterra-ui
 ```
 3. Install dependencies and build the bundle with `npm`
 ```bash
