@@ -1,7 +1,9 @@
 import React, {FC, useEffect, useState} from 'react'
 import { DeckEncoder } from 'runeterra'
 import NCGStore, { replicate } from "../../stores/NodecgStore"
+import { DDragonprovider } from './util/ddragonCtx'
 
+import { DDCardDatatype } from '~types/cardTypes'
 import PlayerInfo from './components/PlayerInfo'
 import DeckList from './components/DeckList'
 import KeyCards from './components/KeyCards'
@@ -20,32 +22,40 @@ interface ReplicantsTypes {
   replicants: RepObjectTypes  
 }
 
+const cardDataRep = nodecg.Replicant<DDCardDatatype[]>('ddCardData')
 const app:FC = () => {
   const [state, setState] = useState<ReplicantsTypes>({
     replicants: NCGStore.getReplicants(),
   });
+	const [ddCardInfo, setddCardInfo] = useState<DDCardDatatype[]>()
 
   useEffect(() => {
     replicate("deckCodeRep"); // You can subscribe to replicants with this method
-  }, []);
+  }, [])
 
   useEffect(() => {
+		const fetchddCardInfo = async () =>{
+			await NodeCG.waitForReplicants(cardDataRep)
+			setddCardInfo(cardDataRep.value)
+		}
     NCGStore.on("change", () => {
       setState({
         replicants: NCGStore.getReplicants(),
-      });
-    });
-  }, []);
+      })
+    })
+    fetchddCardInfo()
+  }, [])
 
   const {
     replicants: { deckCodeRep }, // Used to take out a replicant from the replicants object
   } = state || {};
-
-  if (!deckCodeRep) {
+  
+  if (!deckCodeRep || !ddCardInfo) {
     return (
       <div>Loading</div>
     )
   }
+
   const {name, deckCode} = deckCodeRep
   const deck = DeckEncoder.decode(deckCode)
 
@@ -53,6 +63,7 @@ const app:FC = () => {
     <div id='app'>
       <img className='app-background' src='https://i.imgur.com/KDFgZkf.png' alt='Background'/>  
       <div className='app-container'>
+        <DDragonprovider value={ddCardInfo}>
         <div id='playerinfo'>
           <PlayerInfo 
             deck={deck}
@@ -87,6 +98,7 @@ const app:FC = () => {
             deckCode={deckCode}
           />
         </div>
+        </DDragonprovider>
       </div>
     </div>
   );
