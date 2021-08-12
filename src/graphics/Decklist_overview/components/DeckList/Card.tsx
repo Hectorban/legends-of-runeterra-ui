@@ -1,32 +1,17 @@
-import React, { FC, useState, useEffect } from 'react'
-import { Faction, DDCardDatatype } from '~types/cardTypes'
+import React, { FC, useContext} from 'react'
+import ddragonctx from '../../util/ddragonCtx'
+import { DDCardDatatype } from '~types/cardTypes'
 
 interface Props {
     cardNumber: number
     code: string
     count: number
-    faction: Faction
 }
 
-const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
-    const [ddCardData, setddCardData] = useState<DDCardDatatype>()
-    useEffect(() => {
-        const fetccardInfo = async () => {
-            const response = await nodecg.sendMessage('ddcardData', code)
-            setddCardData(response)
-        }
-        fetccardInfo()
-    }, [])
-
-    if(!ddCardData) {
-        return (
-            <div>
-                ...
-            </div>
-        )
-    }
-
-    const {name, cost, type} = ddCardData
+const Card:FC<Props> = ({ cardNumber, code, count }:Props) => {
+	const ddCardInfo:DDCardDatatype[] = useContext(ddragonctx)
+    const {name, cost, type, supertype} = ddCardInfo[code]
+    console.log(supertype)
     const CardTypeIndex = {
         'Unidad': 1,
         'Hechizo': 2,
@@ -37,7 +22,9 @@ const Card:FC<Props> = ({cardNumber, code, count, faction}:Props) => {
     
     const cardImage = `https://cdn-lor.mobalytics.gg/production/images/cards-preview/${code}.webp`
     const cardColumn = CardTypeIndex[type]
-    const cardAniStyle = {animationDelay: `${cardNumber*150}ms`}
+    const cardAniStyle = {animationDelay: `${cardNumber*150}ms`,
+                          border: supertype==='Campeón' ? `4px solid rgba(255, 223, 1, .5)` : '0px'
+                        }
     const cardColIndex = {gridColumn: cardColumn}
 	return (
     <div className='cardAnimation-container' style={cardColIndex}>

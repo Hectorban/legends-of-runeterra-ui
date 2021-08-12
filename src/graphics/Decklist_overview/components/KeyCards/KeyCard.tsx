@@ -11,7 +11,7 @@ const KeyCard:FC<Props> = ({code, set, order}: Props) => {
 	return (
 		<div className='keycard-container' >
 			<div className='keycard-face back' style={{animationDelay:`${5500+order*2000}ms`}}>
-				<img className='keycard-image' src='https://i.imgur.com/BvWaURf.png' alt=''/>
+				<img className='keycard-image' src='https://i.imgur.com/QjyPsD0.png' alt=''/>
 			</div>
 			<div className='keycard-face front' style={{animationDelay:`${5500+order*2000}ms`}}>
 				<img className='keycard-image' src={keyCardImage} alt=''/>
