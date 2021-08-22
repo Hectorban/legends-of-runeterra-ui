@@ -63,13 +63,16 @@ body {
             }
             .playerinfo-regions, #playerinfo-logo {
                 width: 80%;
-                background-color: var(--background);
-                border: 2px solid #7d818b;
+            }
+            .playerinfo-regions {
                 border-radius: 50%;
+                border: 2px solid #7d818b;
+                background-color: var(--background);
             }
             #playerinfo-logo {
+                width: 100%;
                 grid-column: 5;
-                justify-self: center;
+                justify-self: flex-start;
             }
         }
     }
