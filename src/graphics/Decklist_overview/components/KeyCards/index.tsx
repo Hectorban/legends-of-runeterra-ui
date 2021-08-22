@@ -8,21 +8,12 @@ interface Props {
 }
 const KeyCards:FC<Props> = ({deck}:Props) => {
 	const ddCardInfo:DDCardDatatype[] = useContext(ddragonctx)
-	const keyCardArray: CardType[] = []
-	deck.forEach((card) =>{
-		const {code} = card
-		if(ddCardInfo[code].supertype === 'Campeón') {
-			keyCardArray.push(card)
-		}
-	})
-	if(keyCardArray) {
-		deck.forEach((card) => {
-			const {code} = card
-			if(ddCardInfo[code].cost >= 8) {
-				keyCardArray.push(card)
-			}
-		})
+	let keyCardArray: CardType[] = deck.filter(card => ddCardInfo[card.code].supertype === 'Campeón')
+
+	if(!keyCardArray.length) {
+		keyCardArray = deck.filter(card => ddCardInfo[card.code].cost >= 8) 
 	}
+	
 	return (
 		<div id='keycards-container'>
 			{keyCardArray.map((keyCard, i) => {
