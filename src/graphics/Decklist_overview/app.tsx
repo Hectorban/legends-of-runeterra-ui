@@ -61,7 +61,9 @@ const app:FC = () => {
 
   return (
     <div id='app'>
-      <img className='app-background' src='https://i.imgur.com/KDFgZkf.png' alt='Background'/>  
+      <video className='app-background' autoPlay muted loop> 
+        <source src='https://www.dropbox.com/s/ylkbv46iz3o4sqi/Background.webm?raw=1' type='video/webm'/>
+      </video> 
       <div className='app-container'>
         <DDragonprovider value={ddCardInfo}>
         <div id='playerinfo'>
