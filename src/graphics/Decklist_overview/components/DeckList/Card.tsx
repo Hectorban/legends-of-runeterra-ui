@@ -1,4 +1,5 @@
 import React, { FC, useContext} from 'react'
+import CSS from 'csstype';
 import ddragonctx from '../../util/ddragonCtx'
 import { DDCardDatatype } from '~types/cardTypes'
 
@@ -22,9 +23,11 @@ const Card:FC<Props> = ({ cardNumber, code, count }:Props) => {
     
     const cardImage = `https://cdn-lor.mobalytics.gg/production/images/cards-preview/${code}.webp`
     const cardColumn = CardTypeIndex[type]
-    const cardAniStyle = {animationDelay: `${cardNumber*150}ms`,
-                          border: supertype==='Campeón' ? `4px solid rgba(255, 223, 1, .5)` : '0px'
-                        }
+    const cardAniStyle: CSS.Properties = {
+        animationDelay: `${cardNumber*150}ms`,
+        border: supertype==='Campeón' ? `4px solid rgba(255, 223, 1, .5)` : '0px',
+        borderRadius: '22px 10px 0px 22px'
+    }
     const cardColIndex = {gridColumn: cardColumn}
 	return (
     <div className='cardAnimation-container' style={cardColIndex}>
