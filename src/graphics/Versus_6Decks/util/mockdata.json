@@ -1,0 +1,44 @@
+[
+  {
+    "seed": 2,
+    "gameName": "Jacowaco",
+    "decks":[
+      {
+         "factions":"IO,SH",
+         "champions":"Irelia,Azir",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      },
+      {
+         "factions":"FR,NX",
+         "champions":"LeBlanc,Ashe",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      },
+      {
+         "factions":"FR,SH",
+         "champions":"Renekton,Sejuani,Sivir",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      }
+   ]
+  },
+  {
+    "seed": 2,
+    "gameName": "Jacowaco",
+    "decks":[
+      {
+         "factions":"IO,SH",
+         "champions":"Irelia,Azir",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      },
+      {
+         "factions":"FR,NX",
+         "champions":"LeBlanc,Ashe",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      },
+      {
+         "factions":"FR,SH",
+         "champions":"Renekton,Sejuani,Sivir",
+         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q"
+      }
+   ]
+  }
+]
