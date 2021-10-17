@@ -44,7 +44,7 @@ const PlayerInfo:FC<Props> = ({deck, name}:Props) => {
 			<p id='playerinfo-name'>{name}</p>
             <img className='playerinfo-regions' src={region1} alt={ddImageNames[topWeight[0][0]]}/> 
             <img className='playerinfo-regions' src={region2} alt={ddImageNames[topWeight[1][0]]}/>
-            <img id='playerinfo-logo' src='https://ggtechcg-images.s3.amazonaws.com/Sin_titulo_0b46cae5f2.png' alt='Logo'/>
+            <img id='playerinfo-logo' src='https://i.imgur.com/Z5IqBM9.png' alt='Logo'/>
 		</div>
 	)
 }
