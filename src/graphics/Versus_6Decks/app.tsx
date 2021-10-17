@@ -1,70 +1,58 @@
 import React, {FC, useEffect, useState} from 'react';
-import NCGStore, { replicate } from "../../stores/NodecgStore";
+import NCGStore, { replicate } from "../../stores/NodecgStore"
 import './app.scss'
 
-const mockData = [
-  {
-    seed: 2,
-    game_name: "Jacowaco",
-    decks:[
-      {
-         "factions":"IO,SH",
-         "champions":"Irelia,Azir",
-         "code":"CMCACAYCAUBACAQGFIBQIAQEAUEQIBAHAMNDGXIDAEBAECQBAMBBIAQEAIFQ6AQBAEBBMAIEA54Q",
-      },
-      {
-         "factions":"FR,NX",
-         "champions":"LeBlanc,Ashe",
-         "code":"CECACAYBAIAQIAYEAMAQGBA7EEDACAIEBMPCMKJQAIAQCAIBAECAGAQCAEAQGNICAEAREKQ",
-      },
-      {
-         "factions":"FR,SH",
-         "champions":"Renekton,Sejuani,Sivir",
-         "code":"CMCACAQBAYAQGAICAMAQCBIWD4CQIBZGFU3UGZYDAEBACAQBAQAQUAQEA4GV2AQBAEARUAIEA4KA",
-      }
-   ],
-   
-  },
-  {
+import { DDCardDatatype } from '~types/cardTypes'
+import { DDragonprovider } from './util/ddragonCtx'
 
-  }
-]
+import PlayerInfo from './components/Playerinfo'
+import MiniDecksOverview from './components/MiniDecksOverview';
 
+
+const cardDataRep = nodecg.Replicant<DDCardDatatype[]>('ddCardData')
 
 const app:FC = () => {
-  const [state, setState] = useState({
-    replicants: NCGStore.getReplicants(),
-  });
+  const [Repstate, setRepState] = useState({replicants: NCGStore.getReplicants()});
+  const [ddCardInfo, setddCardInfo] = useState<DDCardDatatype[]>()
 
   useEffect(() => {
-    replicate("Replicant"); // You can subscribe to replicants with this method
-  }, []);
+    replicate("playerData"); // You can subscribe to replicants with this method
+  }, [])
 
   useEffect(() => {
+    const fetchddCardInfo = async () => {
+      await NodeCG.waitForReplicants(cardDataRep)
+      setddCardInfo(cardDataRep.value)
+    }
     NCGStore.on("change", () => {
-      setState({
+      setRepState({
         replicants: NCGStore.getReplicants(),
-      });
-    });
-  }, []);
+      })
+    })
+    fetchddCardInfo()
+  }, [])
 
-  const {
-    replicants: { Replicant }, // Used to take out a replicant from the replicants object
-  } = state || {};
-  console.log(Replicant)
+  const {replicants: { playerData }} = Repstate
+
+  if (!ddCardInfo || !playerData) return null
+
+  console.log(playerData)
 
   return (
     <div id='app'>
-      <div className='app -background'>
-        <img className='background' src='https://i.imgur.com/VZeOw67.jpg' alt=''/>
-      </div>
+      <video className='app -background' autoPlay muted loop> 
+        <source src='https://www.dropbox.com/s/ylkbv46iz3o4sqi/Background.webm?raw=1' type='video/webm'/>
+      </video> 
       <div className='app -container'>
-        <div className='versus'>
-          Versus
-        </div>
-        <div className='playerInfo'>
-          Playerinfo
-        </div>
+        <DDragonprovider value={ddCardInfo}>
+          <MiniDecksOverview
+            playersData={playerData}
+          />
+          <PlayerInfo
+            player1Name={playerData[0].game_name}
+            player2Name={playerData[1].game_name}
+          />
+        </DDragonprovider>
       </div>
     </div>
   );
