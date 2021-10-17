@@ -19,18 +19,192 @@ body {
 .app.-container {
 	z-index: 1;
 	display: grid;
-	grid-template-columns: 23% 77%;
+	grid-template-columns: 22% 78%;
 	grid-template-rows: 100%;
 	.versus {
 		grid-column: 2;
 		grid-row: 1;
 		display: grid;
 		grid-template-rows: 47% 5% 48%;
+		.middle {
+			display: grid;
+			grid-template-columns: 37% 26% 37%;
+			grid-row: 100%;
+			grid-auto-flow: column;
+			grid-row: 2;
+			align-self: center;
+			align-items: center;
+			left: 10px;
+			.left, .right {
+				grid-row: 1;
+				height: 10px;
+				align-self: center;
+			}
+			.left {
+				grid-column: 3;
+				animation: glow 3s infinite alternate;
+			}
+			.image {
+				grid-row: 1;
+				grid-column: 1 / 4;
+			}
+			.right {
+				grid-column: 1;
+				animation: glow 3s infinite alternate;
+			}
+		}
+		.player1, .player2 {
+			display: grid;
+			grid-auto-flow: column;
+			align-items: center;
+			align-content: center;
+			grid-template-columns: 28% 28% 28%;
+			grid-template-rows: 100%;
+			position: relative;
+			left: 95px;
+			gap: 1%;
+			height: 100%;
+			width: 100% ;
+			.minideck {
+				grid-row: 1;
+				display: grid;
+				grid-template-columns: 50% 50%;
+				grid-template-rows: 90% 10%;
+				column-gap: 20px;
+				align-items: center;
+				align-content: center;
+				position: relative;
+				left: 60px;
+				width: 70%;
+				.minideck-background {
+					z-index: 1;
+					grid-row: 1 / 3;
+					grid-column: 1 / 3;
+					position: relative;
+					display: flex;
+					align-items: center;
+					.background {
+						width: 100%;
+						justify-self: center;
+					}
+				}
+				.minideck-region1, .minideck-region2 {
+					z-index: 2;
+					grid-row: 2;
+					width: 50%;
+					display: grid;
+					.image, .region {
+						grid-row: 1;
+						grid-column: 1;
+						width: 100%;
+					}
+					.region {
+						width: 80%;
+						align-self: center;
+						justify-self: center;
+					}
+				}
+				.minideck-region1 {
+					grid-column: 1;
+					justify-self: end;
+				}
+				.minideck-region2 {
+					grid-column: 2;
+				}
+				.minideck-champions {
+					z-index: 2;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: space-evenly;
+					grid-column: 1 / 3;
+					grid-row: 1 / 2;
+					width: 100%;
+					.championImage-container {
+						width: 40%;
+						.image {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
 	}
 	.playerInfo{
 		grid-column: 1;
 		grid-row: 1;
 		display: grid;
-		grid-template-rows: 31% 30% 30% 9%;
+		width: 100%;
+		.playerInfo-background, .playerInfo-cont {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.playerInfo-background {
+			width: 100%;
+		}
+		.playerInfo-cont {
+			align-items: center;
+			align-content: center;
+			width: 95%;
+			display: grid;
+			grid-template-rows: 20% 30% 5% 30% 5%;
+			position: relative;
+			left: 25px;
+			.playerInfo-logo {
+				width: 70%;
+				grid-row: 1;
+				align-items: center;
+				.logo {
+					width: 100%;
+					position: relative;
+					left: 20px;
+				}
+			}
+			.playerInfo-VStext {
+				display: flex;
+				grid-row: 3;
+				align-items: center;
+				align-content: center;
+				.vsText {
+					position: relative;
+					left: 60px;
+				}
+			}
+			.playerInfo-player-1, .playerInfo-player-2 {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				width: 80%;
+				.playerImage {
+					width: 51%;
+					position: relative;
+				}
+				.playerName {
+					color: #C99536;
+					font-family: monospace;
+					font-weight: bolder;
+					font-size: 30px;
+				}
+			}
+		}
 	}
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #4BFFFF;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #4BFFFF;
+  }
+}
+
+@keyframes glow2 {
+  from {
+    box-shadow: 0 0 10px -10px #FBFAC6;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #FBFAC6;
+  }
 }
