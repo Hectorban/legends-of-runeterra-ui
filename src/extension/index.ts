@@ -18,4 +18,5 @@ const init = async () => {
 
 	// Modules 
 	require('./ddragonfetch')
+	require('./tpagefetch')
 }

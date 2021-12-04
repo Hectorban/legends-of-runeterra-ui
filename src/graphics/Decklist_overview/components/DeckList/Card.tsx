@@ -25,7 +25,7 @@ const Card:FC<Props> = ({ cardNumber, code, count }:Props) => {
     const cardColumn = CardTypeIndex[type]
     const cardAniStyle: CSS.Properties = {
         animationDelay: `${cardNumber*150}ms`,
-        border: supertype==='Campeón' ? `4px solid rgba(255, 223, 1, .5)` : '0px',
+        border: supertype === 'Campeón' ? `4px solid rgba(255, 223, 1, .5)` : '0px',
         borderRadius: '22px 10px 0px 22px'
     }
     const cardColIndex = {gridColumn: cardColumn}
