@@ -107,3 +107,5 @@ dist
 /dashboard
 /extension
 /graphics
+
+package-lock.json

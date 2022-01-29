@@ -1,5 +1,6 @@
 
 import fetch, { Headers } from "node-fetch"
+import 'dotenv/config'
 import * as nodecgApiContext from './utils/nodecg-api-context'
 
 const nodecg = nodecgApiContext.get()
@@ -14,9 +15,10 @@ const main = async () => {
 }
 
 const requestPlayerData = async(playeruuid) => {
-  const username = 'lor';
-  const password = 'Top Deck Poro 99';
-  const request = await fetch(`http://lor-tournament-data-lb-1351839414.us-west-2.elb.amazonaws.com/data/5a674db7-b4bc-4519-881d-fc5fe1b6e4d2/${playeruuid}.json`,{
+  const username = process.env.TOURNAMENT_USERNAME;
+  const password = process.env.TOURNAMENT_PASSWORD;
+  const url = process.env.TOURNAMENT_URL
+  const request = await fetch(`${url}/${playeruuid}.json`,{
     headers: new Headers({
       'Authorization': `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`
     })

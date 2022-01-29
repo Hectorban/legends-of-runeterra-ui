@@ -6,7 +6,7 @@ import { DDCardDatatype } from '~types/cardTypes'
 import { DDragonprovider } from './util/ddragonCtx'
 
 import PlayerInfo from './components/Playerinfo'
-import MiniDecksOverview from './components/MiniDecksOverview';
+import MiniDecksOverview from './components/miniDecksOverview';
 
 
 const cardDataRep = nodecg.Replicant<DDCardDatatype[]>('ddCardData')
