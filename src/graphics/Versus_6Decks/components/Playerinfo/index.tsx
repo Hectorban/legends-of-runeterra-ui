@@ -15,7 +15,7 @@ const index:FC<playerInfoTypes> = ({player1Name, player2Name} : playerInfoTypes)
       </div>
       <div className='playerInfo-cont'>
         <div className='playerInfo-logo'>
-          <img className='logo' src="https://i.imgur.com/Z5IqBM9.png" alt="" />
+          <img className='logo' src='https://i.imgur.com/ZI4SpvI.png' alt="" />
         </div>
         <div className='playerInfo-VStext'>
           <img className='vsText' src="https://i.imgur.com/ZIw6m93.png" alt="" />

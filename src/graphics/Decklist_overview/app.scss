@@ -75,6 +75,8 @@ body {
                 grid-column: 5;
                 justify-self: flex-start;
                 object-fit: cover;
+                position: relative;
+                right: 20px;
             }
         }
     }

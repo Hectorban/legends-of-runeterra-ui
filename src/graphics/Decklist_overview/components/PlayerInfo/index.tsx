@@ -42,9 +42,7 @@ const PlayerInfo:FC<Props> = ({deck, name}:Props) => {
 			<p id='playerinfo-name'>{name}</p>
       <img className='playerinfo-regions' src={region1} alt={ddImageNames[topWeight[0][0]]}/> 
       <img className='playerinfo-regions' src={region2} alt={ddImageNames[topWeight[1][0]]}/>
-      <video id='playerinfo-logo' autoPlay muted loop> 
-        <source id='playerinfo-video'  src='https://www.dropbox.com/s/8w8hmxywfyug1yt/Logo_Diciembre.webm?raw=1' type='video/webm'/>
-      </video> 
+      <img id='playerinfo-logo' src='https://www.dropbox.com/s/zhb35qy4kuuzhiw/LOR_ST2022_CJ-TournamentMonoLogo_2700x2700_PCruz_v001_LA.png?raw=1'/>
 		</div>
 	)
 }

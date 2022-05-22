@@ -1,6 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
 import NCGStore, { replicate } from "../../stores/NodecgStore";
 
+import Pie from './components/PieChart';
+import Chart from './components/Chart';
+import TournamentInfo from './components/Tournament_info/TournamentInfo';
+
 const app:FC = () => {
   const [state, setState] = useState({
     replicants: NCGStore.getReplicants(),
@@ -25,8 +29,10 @@ const app:FC = () => {
 
   return (
     <div>
-      <h1>Hello, this is one of your graphics</h1>    
-    </div>
+      <TournamentInfo/>
+      <Chart/>
+      <Pie/>
+    </div> 
   );
 };
 

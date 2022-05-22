@@ -14,16 +14,16 @@ const main = async () => {
 		globalsData.sets.map(async (set, i) => {
 			nodecg.log.info(`Fetching ${set.name} data...`)
 			try {
-			const setRequest = await fetch(`http://dd.b.pvp.net/latest/set${i+1}/es_mx/data/set${i+1}-es_mx.json`)
-			const setData:[DDcardTypes] = await setRequest.json()
-			setData.map((card) => {
-				cardData[card.cardCode] = {
-					"name": card.name,
-					"cost": card.cost,
-					"type": card.type,
-					"supertype": card.supertype
-				}
-			})
+				const setRequest = await fetch(`http://dd.b.pvp.net/latest/set${i+1}/es_mx/data/set${i+1}-es_mx.json`)
+				const setData:[DDcardTypes] = await setRequest.json()
+				setData.map((card) => {
+					cardData[card.cardCode] = {
+						"name": card.name,
+						"cost": card.cost,
+						"type": card.type,
+						"supertype": card.supertype
+					}
+				})
 			}
 			catch {
 				nodecg.log.error(`${set.name} doesn't exist in the data base`)

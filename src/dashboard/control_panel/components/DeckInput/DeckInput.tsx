@@ -17,7 +17,7 @@ const DeckInput:FC = () => {
 
 	return (
     <form className='deckCode-form' onSubmit={formik.handleSubmit}>
-        <label className='deck-code-label' htmlFor='deckCode'>Deck Code</label>
+        <label className='deck-code-label' htmlFor='deckCode'>Manual deck code and name</label>
         <input
         className='input'
         id='deckCode'

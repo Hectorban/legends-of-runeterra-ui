@@ -6,8 +6,7 @@ import { DDCardDatatype } from '~types/cardTypes'
 import { DDragonprovider } from './util/ddragonCtx'
 
 import PlayerInfo from './components/Playerinfo'
-import MiniDecksOverview from './components/MiniDecksOverview';
-
+import MiniDecksOverview from './components/miniDecksOverview'
 
 const cardDataRep = nodecg.Replicant<DDCardDatatype[]>('ddCardData')
 
@@ -32,7 +31,7 @@ const app:FC = () => {
     fetchddCardInfo()
   }, [])
 
-  const {replicants: { playerData }} = Repstate
+  const {replicants: {playerData}} = Repstate
 
   if (!ddCardInfo || !playerData) return null
 
@@ -41,7 +40,7 @@ const app:FC = () => {
   return (
     <div id='app'>
       <video className='app -background' autoPlay muted loop> 
-        <source src='https://www.dropbox.com/s/ylkbv46iz3o4sqi/Background.webm?raw=1' type='video/webm'/>
+        <source src='https://www.dropbox.com/s/gmit18m18ngx6bq/Background.webm?raw=1' type='video/webm'/>
       </video> 
       <div className='app -container'>
         <DDragonprovider value={ddCardInfo}>
