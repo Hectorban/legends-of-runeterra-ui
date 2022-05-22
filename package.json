@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "base-64": "^1.0.0",
+    "dotenv": "^14.3.2",
     "flux": "^4.0.2",
     "formik": "^2.2.9",
     "node-fetch": "^2.6.5",

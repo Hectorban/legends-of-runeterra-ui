@@ -1,4 +1,5 @@
 import fetch, { Headers } from "node-fetch"
+import 'dotenv/config'
 import * as nodecgApiContext from './utils/nodecg-api-context'
 import * as allPlayerData from './utils/player_data.json'
 
@@ -41,11 +42,11 @@ async function exposeDecksByPlayer() {
   allPlayerDecksDataRep.value = decks
 }
 
-async function requestPlayerData (playeruuid) {
-  const username = 'lor';
-  const password = 'Top Deck Poro 99';
-  const url = 'http://lor-tournament-data-lb-1351839414.us-west-2.elb.amazonaws.com/data/55e88333-ce68-4a5c-95c1-361cd4e56f5f'
-  const request = await fetch(`${url}/${playeruuid}.json`, {
+const requestPlayerData = async(playeruuid) => {
+  const username = process.env.TOURNAMENT_USERNAME;
+  const password = process.env.TOURNAMENT_PASSWORD;
+  const url = process.env.TOURNAMENT_URL
+  const request = await fetch(`${url}/${playeruuid}.json`,{
     headers: new Headers({
       'Authorization': `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`
     })
